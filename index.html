@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+
+<html lang="es-MX">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#1D1738" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<meta content="Diagnóstico consultivo de CX e inteligencia artificial para RapidAuto, sustentado con evidencia interna, fuentes oficiales y referencias en formato APA 7." name="description"/>
+<title>RapidAuto | Diagnóstico consultivo de CX e IA · Referencias APA 7</title>
+<style>
+    :root {
+      --ink: #211A3A;
+      --ink-2: #292247;
+      --ink-3: #39305F;
+      --paper: #F6F5FA;
+      --paper-2: #ffffff;
+      --muted: #66627A;
+      --muted-dark: #B8B3CC;
+      --line: rgba(33, 26, 58, 0.12);
+      --line-dark: rgba(255, 255, 255, 0.12);
+      --rapid: #5B55C5;
+      --rapid-2: #9B91FF;
+      --genesys: #FF4F1F;
+      --genesys-2: #FF8763;
+      --lime: #b9f451;
+      --gold: #f9c74f;
+      --red: #ff6b6b;
+      --green: #4fd1a8;
+      --shadow: 0 24px 70px rgba(33, 26, 58, 0.16);
+      --shadow-soft: 0 14px 40px rgba(33, 26, 58, 0.09);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Roboto", Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    body.presentation .topbar { transform: translateY(-110%); }
+    body.presentation .section { padding-top: 84px; padding-bottom: 84px; }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    ::selection { background: rgba(91, 85, 197, 0.28); }
+
+    .svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+    .icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-lg { width: 28px; height: 28px; }
+
+    #scrollProgress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      width: 0;
+      height: 3px;
+      z-index: 1200;
+      background: linear-gradient(90deg, var(--genesys), var(--rapid), var(--lime));
+      box-shadow: 0 0 16px rgba(91, 85, 197, 0.45);
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(7, 18, 34, 0.86);
+      backdrop-filter: blur(18px);
+      transition: transform 0.35s ease;
+    }
+    .nav-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      height: 72px;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand-lockup { display: flex; align-items: center; gap: 13px; text-decoration: none; min-width: 220px; }
+    .rapid-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      position: relative;
+      background: linear-gradient(145deg, rgba(155, 145, 255, 0.24), rgba(91, 85, 197, 0.07));
+      border: 1px solid rgba(155, 145, 255, 0.35);
+      overflow: hidden;
+    }
+    .rapid-mark:before,
+    .rapid-mark:after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      border-radius: 8px;
+      background: var(--rapid-2);
+      transform: skewX(-28deg);
+    }
+    .rapid-mark:before { width: 22px; left: 7px; top: 11px; box-shadow: 5px 8px 0 var(--rapid); }
+    .rapid-mark:after { width: 12px; left: 14px; top: 27px; opacity: 0.55; }
+    .brand-text { color: #fff; font-weight: 800; letter-spacing: 0.04em; font-size: 13px; line-height: 1.1; }
+    .brand-text span { display: block; color: var(--rapid-2); font-size: 10px; margin-top: 4px; font-weight: 650; letter-spacing: 0.14em; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      color: #D5D1E1;
+      text-decoration: none;
+      padding: 9px 11px;
+      border-radius: 10px;
+      font-size: 13px;
+      transition: 0.2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #d8e3f0;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      transition: 0.2s ease;
+    }
+    .icon-btn:hover { transform: translateY(-2px); color: #fff; background: rgba(255,255,255,0.12); }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 108px 0; position: relative; }
+    .section-dark { background: var(--ink); color: #fff; }
+    .section-ink { background: var(--ink-2); color: #fff; }
+    .section-white { background: #fff; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: var(--rapid);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .eyebrow:before { content: ""; width: 28px; height: 2px; background: currentColor; border-radius: 99px; }
+    .section-dark .eyebrow, .section-ink .eyebrow { color: var(--rapid-2); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.7fr); gap: 48px; align-items: end; margin-bottom: 46px; }
+    .section-head.single { grid-template-columns: 1fr; max-width: 850px; }
+    h1, h2, h3, h4, p { margin-top: 0; }
+    h1 { font-size: clamp(42px, 6vw, 78px); line-height: 0.98; letter-spacing: -0.055em; margin-bottom: 24px; }
+    h2 { font-size: clamp(32px, 4.2vw, 54px); line-height: 1.04; letter-spacing: -0.04em; margin-bottom: 18px; }
+    h3 { font-size: 24px; line-height: 1.15; letter-spacing: -0.025em; }
+    h4 { font-size: 16px; margin-bottom: 8px; }
+    .lead { font-size: clamp(18px, 2vw, 22px); line-height: 1.55; color: #D8D4E5; max-width: 720px; }
+    .section-copy { color: var(--muted); font-size: 17px; }
+    .section-dark .section-copy, .section-ink .section-copy { color: var(--muted-dark); }
+    .accent { color: var(--rapid-2); }
+    .accent-orange { color: var(--genesys-2); }
+
+    .hero {
+      min-height: 830px;
+      padding: 152px 0 78px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 76% 20%, rgba(91,85,197,0.18), transparent 28%),
+        radial-gradient(circle at 15% 30%, rgba(255,79,31,0.13), transparent 24%),
+        linear-gradient(135deg, #181329 0%, #252044 56%, #211A3A 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.35;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, #000, transparent 88%);
+    }
+    .hero-orb {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      right: -160px;
+      top: 110px;
+      background: radial-gradient(circle, rgba(155,145,255,0.22), rgba(155,145,255,0.04) 44%, transparent 68%);
+      filter: blur(2px);
+      animation: pulseOrb 7s ease-in-out infinite;
+    }
+    @keyframes pulseOrb { 50% { transform: scale(1.14); opacity: 0.74; } }
+    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, 0.88fr); gap: 44px; align-items: center; }
+    .hero-kicker { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 28px; }
+    .mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #DED9E9;
+      font-size: 12px;
+      font-weight: 650;
+      backdrop-filter: blur(12px);
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rapid); box-shadow: 0 0 14px currentColor; }
+    .dot.orange { background: var(--genesys); }
+    .hero h1 strong { color: var(--rapid-2); font-weight: 850; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 34px 0 34px; }
+    .btn {
+      border: 0;
+      padding: 13px 18px;
+      border-radius: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      font-weight: 760;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #181329; background: linear-gradient(135deg, var(--rapid-2), var(--rapid)); box-shadow: 0 14px 30px rgba(91,85,197,0.26); }
+    .btn-secondary { color: #fff; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); }
+    .btn-light { background: #fff; color: var(--ink); box-shadow: var(--shadow-soft); }
+    .hero-note { color: #AAA5BE; font-size: 12px; max-width: 680px; display: flex; gap: 10px; align-items: flex-start; }
+
+    .journey-board {
+      position: relative;
+      min-height: 510px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 32px;
+      background: linear-gradient(150deg, rgba(255,255,255,0.09), rgba(255,255,255,0.025));
+      box-shadow: 0 35px 90px rgba(0,0,0,0.28);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+    }
+    .journey-board:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 45% 45%, rgba(91,85,197,0.15), transparent 37%);
+      pointer-events: none;
+    }
+    .board-head { position: absolute; top: 20px; left: 22px; right: 22px; display: flex; justify-content: space-between; align-items: center; z-index: 3; }
+    .board-title { font-size: 12px; color: #D5D1E1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 750; }
+    .live-chip { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; color: #d9fbd0; padding: 6px 10px; border-radius: 99px; background: rgba(185,244,81,0.09); border: 1px solid rgba(185,244,81,0.24); }
+    .live-chip:before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 12px var(--lime); animation: blink 1.8s infinite; }
+    @keyframes blink { 50% { opacity: 0.35; } }
+    .route-map { position: absolute; inset: 56px 10px 8px; }
+    .route-map svg { width: 100%; height: 100%; }
+    .route-base { stroke: rgba(255,255,255,0.13); stroke-width: 4; fill: none; }
+    .route-glow { stroke: url(#routeGradient); stroke-width: 3; fill: none; stroke-dasharray: 9 12; animation: dash 4s linear infinite; filter: drop-shadow(0 0 8px rgba(91,85,197,0.4)); }
+    @keyframes dash { to { stroke-dashoffset: -84; } }
+    .map-node { position: absolute; z-index: 4; display: flex; align-items: center; gap: 9px; }
+    .map-node .node-circle { width: 40px; height: 40px; border-radius: 14px; display: grid; place-items: center; background: rgba(35,29,61,0.92); border: 1px solid rgba(155,145,255,0.28); color: var(--rapid-2); box-shadow: 0 12px 28px rgba(0,0,0,0.22); }
+    .map-node .node-label { font-size: 11px; line-height: 1.15; color: #D5D1E1; white-space: nowrap; }
+    .map-node .node-label strong { display: block; color: #fff; margin-bottom: 4px; font-size: 12px; }
+    .node-1 { left: 4%; top: 56%; }
+    .node-2 { left: 25%; top: 22%; }
+    .node-3 { right: 28%; top: 54%; }
+    .node-4 { right: 4%; top: 18%; }
+    .car-runner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 5;
+      width: 50px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      color: #181329;
+      background: linear-gradient(135deg, var(--rapid-2), var(--rapid));
+      border-radius: 11px 15px 10px 10px;
+      box-shadow: 0 10px 25px rgba(91,85,197,0.35), 0 0 0 5px rgba(91,85,197,0.08);
+      offset-path: path("M 48 315 C 125 215, 196 92, 300 158 S 426 327, 555 140");
+      animation: drive 8s cubic-bezier(.55,.05,.25,.95) infinite;
+    }
+    .car-runner:before, .car-runner:after { content: ""; position: absolute; bottom: -5px; width: 10px; height: 10px; border-radius: 50%; background: #171226; border: 2px solid #C3BCFF; }
+    .car-runner:before { left: 8px; }
+    .car-runner:after { right: 8px; }
+    @keyframes drive { 0% { offset-distance: 0%; opacity: 0; } 7% { opacity: 1; } 88% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    .promise-card {
+      position: absolute;
+      left: 50%;
+      bottom: 34px;
+      transform: translateX(-50%);
+      width: 220px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      text-align: center;
+      z-index: 6;
+      background: rgba(24,19,41,0.88);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.26);
+      backdrop-filter: blur(14px);
+    }
+    .promise-card span { display: block; color: var(--muted-dark); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; }
+    .promise-card strong { display: block; margin: 3px 0; font-size: 35px; line-height: 1; color: #fff; }
+    .promise-card small { color: var(--rapid-2); font-weight: 700; }
+
+    .hero-stats { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 58px; }
+    .hero-stat { padding: 17px 18px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.045); }
+    .hero-stat strong { display: block; font-size: 24px; color: #fff; letter-spacing: -0.035em; }
+    .hero-stat span { display: block; margin-top: 3px; color: #AAA5BE; font-size: 11px; }
+
+    .insight-banner {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 20px 22px;
+      border: 1px solid rgba(91,85,197,0.21);
+      border-radius: 20px;
+      background: linear-gradient(105deg, rgba(91,85,197,0.08), rgba(255,255,255,0.85));
+      margin-bottom: 28px;
+    }
+    .insight-icon { width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center; color: #4D46B7; background: rgba(91,85,197,0.13); }
+    .insight-banner h3 { margin-bottom: 5px; font-size: 19px; }
+    .insight-banner p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .scope-tag { white-space: nowrap; padding: 8px 11px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--muted); font-size: 11px; font-weight: 700; }
+
+    .kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .kpi-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      min-height: 166px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card:after { content: ""; position: absolute; width: 110px; height: 110px; border-radius: 50%; right: -42px; top: -46px; background: radial-gradient(circle, rgba(91,85,197,0.12), transparent 70%); }
+    .kpi-icon { width: 40px; height: 40px; border-radius: 13px; display: grid; place-items: center; color: #5851C7; background: rgba(91,85,197,0.1); margin-bottom: 18px; }
+    .kpi-card.orange .kpi-icon { color: #C83B10; background: rgba(255,79,31,0.1); }
+    .kpi-card.lime .kpi-icon { color: #5c7d0a; background: rgba(185,244,81,0.17); }
+    .kpi-card strong { display: block; font-size: 29px; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 6px; }
+    .kpi-card span { display: block; color: var(--muted); font-size: 12px; }
+    .kpi-card small { display: block; margin-top: 12px; color: #8F899C; font-size: 10px; line-height: 1.35; }
+
+    .strategy-split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 26px; margin-top: 32px; }
+    .strategy-card { border-radius: 24px; padding: 28px; background: var(--ink); color: #fff; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .strategy-card:before { content: ""; position: absolute; width: 270px; height: 270px; border-radius: 50%; right: -100px; bottom: -150px; background: radial-gradient(circle, rgba(91,85,197,0.25), transparent 70%); }
+    .strategy-card h3 { max-width: 520px; }
+    .strategy-card p { color: #B9B4CB; }
+    .north-star { display: flex; align-items: center; gap: 14px; margin-top: 28px; padding: 15px; border-radius: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
+    .north-star .star { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 14px; display: grid; place-items: center; color: var(--lime); background: rgba(185,244,81,0.08); }
+    .north-star strong { display: block; font-size: 13px; }
+    .north-star span { display: block; color: #B9B4CB; font-size: 11px; margin-top: 3px; }
+    .evolution-card { border: 1px solid var(--line); border-radius: 24px; padding: 28px; background: #fff; box-shadow: var(--shadow-soft); }
+    .evolution-row { display: grid; grid-template-columns: 104px 1fr 28px 1fr; gap: 15px; align-items: center; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .evolution-row:last-child { border-bottom: 0; }
+    .evolution-label { color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+    .evolution-box { padding: 12px 13px; border-radius: 13px; background: var(--paper); color: #4B4660; font-size: 12px; }
+    .evolution-box.target { background: rgba(91,85,197,0.09); color: #423B9E; border: 1px solid rgba(91,85,197,0.18); font-weight: 650; }
+    .evolution-arrow { color: var(--rapid); display: grid; place-items: center; }
+
+    .benchmark-controls { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 24px; }
+    .selector-btn {
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.05);
+      color: #b9c8d9;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 12px;
+      transition: 0.2s ease;
+    }
+    .selector-btn:hover, .selector-btn.active { color: #fff; border-color: rgba(155,145,255,0.42); background: rgba(91,85,197,0.13); transform: translateY(-1px); }
+    .benchmark-grid { display: grid; grid-template-columns: minmax(420px, 0.92fr) minmax(0, 1.08fr); gap: 30px; align-items: stretch; }
+    .radar-card, .benchmark-card { border: 1px solid rgba(255,255,255,0.12); border-radius: 26px; background: rgba(255,255,255,0.045); backdrop-filter: blur(12px); }
+    .radar-card { padding: 24px; min-height: 520px; display: flex; flex-direction: column; }
+    .radar-card-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 10px; }
+    .radar-card-head h3 { margin-bottom: 0; font-size: 18px; }
+    .score-pair { display: flex; gap: 7px; }
+    .score-chip { padding: 7px 9px; border-radius: 10px; font-size: 10px; font-weight: 760; background: rgba(255,255,255,0.07); color: #c4d1df; }
+    .score-chip.rapid { color: var(--rapid-2); border: 1px solid rgba(155,145,255,0.2); }
+    #radarChart { width: 100%; flex: 1; min-height: 360px; overflow: visible; }
+    .radar-note { color: #AAA5BE; font-size: 10px; margin-top: 8px; }
+    .benchmark-card { padding: 30px; display: flex; flex-direction: column; }
+    .company-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+    .company-identity { display: flex; align-items: center; gap: 14px; }
+    .company-mark { width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; color: #181329; background: var(--rapid-2); font-weight: 900; }
+    .company-name { font-size: 23px; font-weight: 800; letter-spacing: -0.03em; }
+    .company-score { font-size: 32px; font-weight: 850; letter-spacing: -0.05em; }
+    .company-score small { font-size: 12px; color: #AAA5BE; font-weight: 650; letter-spacing: 0; }
+    .territory { padding: 17px 18px; margin-bottom: 24px; border-radius: 16px; background: rgba(255,255,255,0.055); border-left: 3px solid var(--rapid); }
+    .territory span { color: #A39DB8; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; }
+    .territory strong { display: block; margin-top: 6px; color: #fff; font-size: 15px; line-height: 1.45; }
+    .dimension-list { display: grid; gap: 13px; }
+    .dimension-row { display: grid; grid-template-columns: 142px 1fr 38px; gap: 10px; align-items: center; }
+    .dimension-row span { color: #C1BCD2; font-size: 11px; }
+    .bar-track { height: 8px; border-radius: 99px; background: rgba(255,255,255,0.08); overflow: hidden; }
+    .bar-fill { height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, var(--rapid), var(--rapid-2)); transition: width 0.55s ease; }
+    .dimension-row b { color: #E9E5F0; font-size: 11px; text-align: right; }
+    .benchmark-callout { margin-top: auto; padding-top: 22px; color: #AAA5BE; font-size: 12px; }
+    .benchmark-callout strong { color: #fff; }
+
+    .matrix-wrap { border: 1px solid var(--line); border-radius: 24px; background: #fff; overflow: hidden; box-shadow: var(--shadow-soft); }
+    .matrix-scroll { overflow-x: auto; }
+    .matrix { width: 100%; min-width: 1120px; border-collapse: collapse; }
+    .matrix th, .matrix td { padding: 17px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .matrix th { font-size: 10px; text-transform: uppercase; letter-spacing: 0.09em; color: #716C81; background: #FAF9FC; position: sticky; top: 0; z-index: 2; }
+    .matrix td { color: #4A455E; font-size: 12px; }
+    .matrix tr:last-child td { border-bottom: 0; }
+    .matrix td:first-child { font-weight: 800; color: var(--ink); width: 142px; }
+    .matrix .rapid-col { background: rgba(91,85,197,0.045); }
+    .matrix th.rapid-col { color: #4D46B7; }
+    .cell-mode { display: inline-block; padding: 4px 7px; border-radius: 7px; margin-bottom: 6px; background: #F0EEF7; color: #615C70; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+    .cell-mode.assisted { background: rgba(249,199,79,0.18); color: #8b6606; }
+    .cell-mode.digital { background: rgba(91,85,197,0.13); color: #4D46B7; }
+    .cell-mode.transactional { background: rgba(79,209,168,0.15); color: #13765c; }
+    .cell-mode.ecosystem { background: rgba(255,79,31,0.12); color: #b33c1d; }
+    .cell-mode.unknown { background: #F1EFF6; color: #7d8998; }
+    .cell-mode.agentic { background: linear-gradient(90deg, rgba(255,79,31,0.13), rgba(123,102,232,0.16)); color: #5A3EC8; border: 1px solid rgba(123,102,232,0.22); }
+    .verification-banner { margin: -6px 0 24px; padding: 20px 22px; border-radius: 20px; display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; background: linear-gradient(100deg, rgba(255,79,31,0.08), rgba(91,85,197,0.08)); border: 1px solid rgba(91,85,197,0.18); box-shadow: var(--shadow-soft); }
+    .verification-icon { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; color: #fff; background: linear-gradient(145deg, var(--genesys), #FF7047); font-weight: 900; letter-spacing: 0.05em; }
+    .verification-kicker { display: block; color: #5B55C5; font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 5px; }
+    .verification-banner h3 { font-size: 18px; margin: 0 0 6px; color: var(--ink); }
+    .verification-banner p { margin: 0; color: #625D72; font-size: 12px; line-height: 1.6; }
+    .evidence-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+    .evidence-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,0.8); border: 1px solid var(--line); color: #6A6479; font-size: 9px; font-weight: 800; }
+    .evidence-dot { width: 7px; height: 7px; border-radius: 50%; background: #4FD1A8; }
+    .evidence-dot.observed { background: #9B91FF; }
+    .evidence-dot.unknown { background: #A9A4B5; }
+    .matrix-note { padding: 14px 18px; background: #FCFBFD; color: #817C8E; font-size: 10px; border-top: 1px solid var(--line); }
+
+    .channel-lens { margin-top: 32px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 22px; }
+    .channel-tabs { display: grid; gap: 8px; align-content: start; }
+    .channel-tab { border: 1px solid var(--line); background: #fff; color: #5e7086; padding: 13px 14px; border-radius: 13px; display: flex; align-items: center; gap: 10px; text-align: left; font-size: 12px; font-weight: 750; transition: 0.2s ease; }
+    .channel-tab:hover, .channel-tab.active { color: #086f91; border-color: rgba(91,85,197,0.32); background: rgba(91,85,197,0.07); transform: translateX(3px); }
+    .channel-detail { border-radius: 24px; padding: 28px; color: #fff; background: linear-gradient(145deg, var(--ink), var(--ink-2)); box-shadow: var(--shadow); min-height: 360px; }
+    .detail-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+    .detail-icon { width: 50px; height: 50px; border-radius: 16px; display: grid; place-items: center; color: var(--rapid-2); background: rgba(91,85,197,0.1); border: 1px solid rgba(91,85,197,0.18); }
+    .detail-kpi { padding: 7px 10px; border-radius: 10px; color: #cbd8e5; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 10px; }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .detail-block { padding: 17px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); }
+    .detail-block span { display: block; color: #7890a8; font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin-bottom: 8px; }
+    .detail-block h4 { color: #fff; font-size: 14px; }
+    .detail-block p { color: #a8b9cb; font-size: 11px; margin-bottom: 0; }
+    .detail-block.target { grid-column: 1 / -1; background: linear-gradient(100deg, rgba(91,85,197,0.11), rgba(255,79,31,0.08)); }
+    .detail-block.target span { color: var(--rapid-2); }
+
+    .ai-grid { display: grid; grid-template-columns: 370px minmax(0, 1fr); gap: 28px; align-items: stretch; }
+    .token-card { border-radius: 26px; padding: 28px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.12); }
+    .token-card h3 { font-size: 20px; }
+    .token-card p { color: #8fa3ba; font-size: 12px; }
+    .donut-wrap { display: grid; place-items: center; margin: 26px 0; }
+    .donut {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      position: relative;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(var(--rapid) 0 60%, var(--genesys) 60% 62%, rgba(255,255,255,0.08) 62% 100%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 20px 50px rgba(0,0,0,0.22);
+    }
+    .donut:before { content: ""; position: absolute; width: 146px; height: 146px; border-radius: 50%; background: var(--ink-2); border: 1px solid rgba(255,255,255,0.08); }
+    .donut-center { position: relative; z-index: 1; text-align: center; }
+    .donut-center strong { display: block; font-size: 41px; letter-spacing: -0.05em; }
+    .donut-center span { color: #8196ae; font-size: 10px; text-transform: uppercase; letter-spacing: 0.11em; }
+    .token-legend { display: grid; gap: 10px; }
+    .legend-row { display: grid; grid-template-columns: 10px 1fr auto; gap: 10px; align-items: center; color: #aebdce; font-size: 11px; }
+    .legend-swatch { width: 10px; height: 10px; border-radius: 3px; background: var(--rapid); }
+    .legend-swatch.orange { background: var(--genesys); }
+    .legend-swatch.gray { background: rgba(255,255,255,0.18); }
+    .legend-row b { color: #fff; }
+    .activation-card { border-radius: 26px; padding: 30px; background: #fff; color: var(--ink); box-shadow: var(--shadow); }
+    .activation-card h3 { font-size: 24px; }
+    .activation-card > p { color: var(--muted); font-size: 13px; max-width: 760px; }
+    .ai-ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 26px 0 28px; }
+    .ladder-step { padding: 18px; border-radius: 17px; border: 1px solid var(--line); background: #FAF9FC; position: relative; overflow: hidden; }
+    .ladder-step.active { border-color: rgba(91,85,197,0.25); background: rgba(91,85,197,0.07); }
+    .ladder-step.next { border-color: rgba(255,79,31,0.24); background: rgba(255,79,31,0.06); }
+    .ladder-number { width: 28px; height: 28px; border-radius: 9px; display: grid; place-items: center; margin-bottom: 15px; color: #fff; background: var(--ink-3); font-weight: 800; font-size: 11px; }
+    .ladder-step.active .ladder-number { background: var(--rapid); color: #181329; }
+    .ladder-step.next .ladder-number { background: var(--genesys); }
+    .ladder-step span { color: #8E889B; font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; }
+    .ladder-step h4 { margin-top: 6px; font-size: 15px; }
+    .ladder-step p { margin-bottom: 0; color: #7B768A; font-size: 10px; }
+    .usecase-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .usecase-btn { border: 1px solid var(--line); color: #6D687D; background: #fff; padding: 9px 11px; border-radius: 10px; font-size: 10px; font-weight: 800; transition: 0.2s ease; }
+    .usecase-btn:hover, .usecase-btn.active { color: #4D46B7; background: rgba(91,85,197,0.08); border-color: rgba(91,85,197,0.3); }
+    .usecase-panel { display: grid; grid-template-columns: 1fr 44px 1fr; gap: 14px; align-items: stretch; }
+    .usecase-state { padding: 18px; border-radius: 17px; background: #F8F7FB; border: 1px solid var(--line); }
+    .usecase-state.target { background: linear-gradient(130deg, rgba(91,85,197,0.08), rgba(185,244,81,0.08)); border-color: rgba(91,85,197,0.2); }
+    .usecase-state span { color: #8F899C; font-size: 9px; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 800; }
+    .usecase-state h4 { margin: 7px 0; font-size: 14px; }
+    .usecase-state p { color: #736E84; font-size: 10px; margin-bottom: 0; }
+    .usecase-arrow { display: grid; place-items: center; color: var(--rapid); }
+
+    .plays-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+    .play-card { padding: 20px; border-radius: 19px; border: 1px solid rgba(255,255,255,0.11); background: rgba(255,255,255,0.045); position: relative; overflow: hidden; }
+    .play-card:after { content: ""; position: absolute; width: 86px; height: 86px; border-radius: 50%; top: -38px; right: -30px; background: radial-gradient(circle, rgba(91,85,197,0.18), transparent 70%); }
+    .play-icon { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; color: var(--rapid-2); background: rgba(91,85,197,0.09); margin-bottom: 18px; }
+    .play-card h4 { color: #fff; font-size: 14px; min-height: 0; margin-bottom: 10px; }
+    .play-card p { color: #B8B3CC; font-size: 10px; margin-bottom: 12px; line-height: 1.55; }
+    .play-card .metric { display: inline-flex; padding: 5px 7px; border-radius: 7px; color: #d9f7c4; background: rgba(185,244,81,0.08); font-size: 9px; font-weight: 750; }
+
+    .roadmap { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .roadmap:before { content: ""; position: absolute; top: 33px; left: 9%; right: 9%; height: 2px; background: linear-gradient(90deg, var(--rapid), var(--genesys), var(--lime)); opacity: 0.35; }
+    .phase { position: relative; padding-top: 72px; }
+    .phase-dot { position: absolute; top: 17px; left: 24px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: var(--ink); border: 5px solid var(--paper); box-shadow: 0 0 0 2px rgba(91,85,197,0.25); z-index: 2; font-size: 10px; font-weight: 800; }
+    .phase-card { height: 100%; border-radius: 22px; padding: 23px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+    .phase-time { display: inline-block; padding: 5px 8px; border-radius: 7px; color: #4D46B7; background: rgba(91,85,197,0.1); font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+    .phase h3 { margin: 13px 0 12px; font-size: 17px; }
+    .phase ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+    .phase li { color: #6F6A80; font-size: 10px; padding-left: 16px; position: relative; }
+    .phase li:before { content: ""; position: absolute; left: 0; top: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--rapid); }
+    .phase-outcome { margin-top: 17px; padding-top: 14px; border-top: 1px solid var(--line); color: #4B4660; font-size: 10px; font-weight: 800; }
+
+    .impact-grid { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 26px; }
+    .calculator { padding: 28px; border-radius: 26px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.12); }
+    .calculator h3 { font-size: 21px; }
+    .calculator > p { color: #AAA5BE; font-size: 11px; }
+    .slider-group { margin: 26px 0; }
+    .slider-head { display: flex; justify-content: space-between; gap: 16px; align-items: end; margin-bottom: 10px; }
+    .slider-head label { color: #d5e0ea; font-size: 11px; font-weight: 700; }
+    .slider-value { color: var(--rapid-2); font-size: 15px; font-weight: 850; }
+    input[type="range"] { width: 100%; accent-color: var(--rapid); }
+    .calc-results { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .calc-result { padding: 17px; border-radius: 16px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.08); }
+    .calc-result span { color: #9E98B1; font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .calc-result strong { display: block; margin-top: 5px; color: #fff; font-size: 27px; letter-spacing: -0.04em; }
+    .calc-note { margin-top: 16px; color: #908AA5; font-size: 9px; }
+    .metric-tree { border-radius: 26px; padding: 28px; background: #fff; color: var(--ink); box-shadow: var(--shadow); }
+    .metric-tree h3 { font-size: 22px; }
+    .tree-root { padding: 17px; margin-bottom: 14px; border-radius: 16px; background: linear-gradient(110deg, rgba(91,85,197,0.12), rgba(185,244,81,0.1)); border: 1px solid rgba(91,85,197,0.18); }
+    .tree-root span { color: #6C667C; font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; }
+    .tree-root strong { display: block; margin-top: 6px; font-size: 15px; }
+    .tree-branches { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .tree-branch { padding: 14px; border-radius: 14px; background: #F8F7FB; border: 1px solid var(--line); }
+    .tree-branch h4 { font-size: 12px; }
+    .tree-branch p { color: #7E798B; font-size: 9px; margin-bottom: 0; }
+
+    .sources-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .source-card { padding: 25px; border-radius: 22px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+    .source-card h3 { font-size: 18px; }
+    .source-list { display: grid; gap: 10px; }
+    .source-item { display: flex; align-items: flex-start; gap: 11px; padding: 11px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+    .source-item:last-child { border-bottom: 0; }
+    .source-item .source-number { width: 25px; height: 25px; border-radius: 8px; flex: 0 0 auto; display: grid; place-items: center; color: #4D46B7; background: rgba(91,85,197,0.1); font-size: 9px; font-weight: 800; }
+    .source-item strong { display: block; color: var(--ink); font-size: 11px; }
+    .source-item span { display: block; color: #858093; font-size: 9px; margin-top: 2px; }
+    .source-item.external:hover strong { color: #4D46B7; }
+    .method-card { padding: 25px; border-radius: 22px; background: linear-gradient(145deg, var(--ink), var(--ink-2)); color: #fff; }
+    .method-card h3 { font-size: 18px; }
+    .method-card p { color: #B4AFC5; font-size: 11px; }
+    .method-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .method-pills span { padding: 7px 9px; border-radius: 9px; color: #D7D3E1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 9px; font-weight: 700; }
+
+    .closing {
+      padding: 82px 0;
+      color: #fff;
+      background: linear-gradient(120deg, #181329, #302858 52%, #221B3D);
+      position: relative;
+      overflow: hidden;
+    }
+    .closing:after { content: ""; position: absolute; width: 460px; height: 460px; border-radius: 50%; right: -120px; top: -220px; background: radial-gradient(circle, rgba(91,85,197,0.23), transparent 70%); }
+    .closing-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; }
+    .closing h2 { max-width: 760px; }
+    .closing p { color: #B8B3CC; max-width: 700px; }
+    .closing-card { padding: 24px; border-radius: 22px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); }
+    .closing-card span { color: var(--rapid-2); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; }
+    .closing-card strong { display: block; margin-top: 10px; font-size: 20px; line-height: 1.35; }
+
+    footer { padding: 24px; background: #11101D; color: #9690A9; font-size: 10px; }
+    .footer-wrap { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .genesys-lockup { display: inline-flex; align-items: center; gap: 9px; color: #C6C1D2; font-weight: 750; }
+    .g-dots { display: grid; gap: 2px; }
+    .g-dots i { display: block; width: 12px; height: 5px; border-radius: 99px; background: var(--genesys); }
+    .g-dots i:nth-child(2) { width: 17px; }
+    .g-dots i:nth-child(3) { width: 9px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+
+
+    /* Consultative diagnostic components */
+    .consultative-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .consultative-card {
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+    .consultative-card > span {
+      display: block;
+      color: var(--genesys);
+      font-size: 9px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      margin-bottom: 8px;
+    }
+    .consultative-card strong { display: block; font-size: 14px; line-height: 1.35; margin-bottom: 8px; }
+    .consultative-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
+
+    .decision-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
+      gap: 30px;
+      align-items: end;
+      margin-top: 42px;
+      margin-bottom: 18px;
+    }
+    .decision-heading h3 { color: #fff; margin-bottom: 0; font-size: 25px; }
+    .decision-heading p { color: var(--muted-dark); margin: 0; font-size: 12px; }
+    .decision-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 13px; }
+    .priority-chip, .feasibility-chip {
+      display: inline-flex;
+      padding: 5px 7px;
+      border-radius: 7px;
+      font-size: 8px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .priority-chip { color: #FFE1D8; background: rgba(255,79,31,0.15); border: 1px solid rgba(255,135,99,0.22); }
+    .priority-chip.medium { color: #DED8FF; background: rgba(123,102,232,0.16); border-color: rgba(155,145,255,0.24); }
+    .priority-chip.controlled { color: #DDF9EF; background: rgba(66,197,158,0.13); border-color: rgba(66,197,158,0.24); }
+    .feasibility-chip { color: #C7C2D5; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); }
+    .decision-list { display: grid; gap: 9px; margin: 0 0 14px; }
+    .decision-list div { padding-top: 9px; border-top: 1px solid rgba(255,255,255,0.09); }
+    .decision-list dt { color: #8F89A5; font-size: 8px; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 850; }
+    .decision-list dd { margin: 4px 0 0; color: #D1CDDD; font-size: 10px; line-height: 1.48; }
+
+    .criteria-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .criteria-strip div { padding: 12px; border-radius: 12px; background: #F7F6FA; border: 1px solid var(--line); }
+    .criteria-strip span { display: block; color: #8C8699; font-size: 8px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 850; }
+    .criteria-strip strong { display: block; margin-top: 5px; color: var(--ink); font-size: 10px; line-height: 1.4; }
+
+    .governance-panel {
+      margin-top: 34px;
+      padding: 30px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .governance-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, 0.55fr); gap: 28px; align-items: end; margin-bottom: 22px; }
+    .governance-head h3 { color: #fff; margin: 0; }
+    .governance-head p { color: var(--muted-dark); margin: 0; font-size: 12px; }
+    .governance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .guardrail-card { padding: 17px; border-radius: 16px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.09); }
+    .guardrail-card strong { display: block; color: #fff; font-size: 12px; margin-bottom: 6px; }
+    .guardrail-card p { margin: 0; color: #AAA5BE; font-size: 9px; line-height: 1.52; }
+    .guardrail-card .guardrail-number { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; margin-bottom: 12px; color: #fff; background: rgba(255,79,31,0.18); border: 1px solid rgba(255,135,99,0.22); font-size: 9px; font-weight: 900; }
+
+    .validation-panel {
+      margin-top: 26px;
+      padding: 28px;
+      border-radius: 24px;
+      background: #fff;
+      color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+    .validation-panel h3 { margin-bottom: 8px; font-size: 22px; }
+    .validation-panel > p { color: var(--muted); font-size: 12px; max-width: 850px; }
+    .validation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin-top: 18px; }
+    .validation-item { padding: 15px; border-radius: 14px; background: #F8F7FB; border: 1px solid var(--line); }
+    .validation-item span { display: block; color: var(--genesys); font-size: 9px; font-weight: 900; margin-bottom: 6px; }
+    .validation-item strong { display: block; font-size: 11px; line-height: 1.42; }
+
+    .phase-gate {
+      margin-top: 12px;
+      padding: 10px 11px;
+      border-radius: 10px;
+      color: #5A546B;
+      background: #F7F6FA;
+      border: 1px solid var(--line);
+      font-size: 9px;
+      line-height: 1.45;
+    }
+    .phase-gate b { color: var(--genesys); }
+
+    @media (max-width: 1100px) {
+      .consultative-grid, .governance-grid, .validation-grid { grid-template-columns: repeat(2, 1fr); }
+      .decision-heading, .governance-head { grid-template-columns: 1fr; }
+      .ai-ladder { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 760px) {
+      .consultative-grid, .governance-grid, .validation-grid, .criteria-strip, .ai-ladder { grid-template-columns: 1fr; }
+      .plays-grid { grid-template-columns: 1fr; }
+      .governance-panel, .validation-panel { padding: 22px; }
+    }
+
+    @media (max-width: 1100px) {
+      .nav-links { display: none; }
+      .hero-grid, .section-head, .strategy-split, .benchmark-grid, .ai-grid, .impact-grid, .closing-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 130px; }
+      .journey-board { min-height: 480px; max-width: 660px; width: 100%; margin: 0 auto; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+      .plays-grid { grid-template-columns: repeat(3, 1fr); }
+      .roadmap { grid-template-columns: repeat(2, 1fr); }
+      .roadmap:before { display: none; }
+      .phase { padding-top: 0; }
+      .phase-dot { position: relative; top: auto; left: auto; margin-bottom: 12px; border-color: var(--paper); }
+    }
+
+    @media (max-width: 760px) {
+      .verification-banner { grid-template-columns: 1fr; }
+      .verification-icon { width: 44px; height: 44px; border-radius: 14px; }
+      .section { padding: 76px 0; }
+      .container { padding: 0 17px; }
+      .nav-wrap { padding: 0 15px; height: 64px; }
+      .brand-lockup { min-width: 0; }
+      .brand-text span { display: none; }
+      .hero { min-height: auto; padding: 112px 0 60px; }
+      .hero-grid { gap: 28px; }
+      .journey-board { min-height: 410px; border-radius: 24px; }
+      .route-map { transform: scale(0.86); transform-origin: center; inset: 38px -30px 0; }
+      .map-node .node-label { display: none; }
+      .node-1 { left: 4%; top: 60%; }
+      .node-2 { left: 24%; top: 21%; }
+      .node-3 { right: 24%; top: 57%; }
+      .node-4 { right: 4%; top: 17%; }
+      .car-runner { display: none; }
+      .hero-stats, .kpi-grid, .plays-grid, .roadmap, .sources-grid { grid-template-columns: 1fr; }
+      .insight-banner { grid-template-columns: auto 1fr; }
+      .scope-tag { grid-column: 1 / -1; width: fit-content; }
+      .evolution-row { grid-template-columns: 1fr; }
+      .evolution-arrow { transform: rotate(90deg); }
+      .channel-lens { grid-template-columns: 1fr; }
+      .channel-tabs { display: flex; overflow-x: auto; padding-bottom: 4px; }
+      .channel-tab { min-width: 150px; }
+      .detail-grid, .ai-ladder, .usecase-panel, .tree-branches { grid-template-columns: 1fr; }
+      .detail-block.target { grid-column: auto; }
+      .usecase-arrow { transform: rotate(90deg); min-height: 28px; }
+      .token-card { max-width: none; }
+      .calc-results { grid-template-columns: 1fr; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+      h1 { font-size: 48px; }
+    }
+
+    @media print {
+      .topbar, #scrollProgress, .hero-actions, .nav-actions, .benchmark-controls, .channel-tabs, .usecase-tabs, .calculator input { display: none !important; }
+      body { background: #fff; color: #111; }
+      .hero, .section-dark, .section-ink, .closing { background: #101a28 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .section { padding: 44px 0; break-inside: avoid; }
+      .hero { min-height: auto; padding-top: 54px; }
+      .journey-board { min-height: 430px; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      a { text-decoration: none; }
+    }
+  </style>
+<style id="genesys-cloud-brand-overrides">
+    /* Genesys Cloud visual language: orange action, indigo foundation,
+       violet/blue intelligence accents and cloud-neutral surfaces. */
+    :root {
+      --ink: #211A3A;
+      --ink-2: #292247;
+      --ink-3: #39305F;
+      --paper: #F6F5FA;
+      --paper-2: #FFFFFF;
+      --muted: #66627A;
+      --muted-dark: #B8B3CC;
+      --line: rgba(48, 40, 88, 0.13);
+      --line-dark: rgba(255, 255, 255, 0.14);
+      --rapid: #5B55C5;
+      --rapid-2: #9B91FF;
+      --genesys: #FF4F1F;
+      --genesys-2: #FF8763;
+      --genesys-blue: #2A60C8;
+      --genesys-violet: #7B66E8;
+      --genesys-lilac: #EEEAF8;
+      --lime: #42C59E;
+      --gold: #F2B84B;
+      --red: #E35355;
+      --green: #2EB68D;
+      --shadow: 0 24px 70px rgba(35, 28, 66, 0.17);
+      --shadow-soft: 0 14px 38px rgba(35, 28, 66, 0.09);
+    }
+
+    html, body, button, input { font-family: "Roboto", Arial, Helvetica, sans-serif; }
+    body { background: var(--paper); color: var(--ink); font-weight: 400; }
+    h1, h2, h3, h4, strong, b { font-family: "Roboto", Arial, Helvetica, sans-serif; }
+    h1, h2 { font-weight: 800; }
+    h3, h4 { font-weight: 700; }
+    ::selection { color: #fff; background: rgba(255, 79, 31, 0.84); }
+
+    #scrollProgress {
+      height: 4px;
+      background: linear-gradient(90deg, var(--genesys) 0%, var(--genesys-2) 32%, var(--genesys-violet) 67%, var(--genesys-blue) 100%);
+      box-shadow: 0 0 18px rgba(255, 79, 31, 0.36);
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(45, 39, 79, 0.10);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 8px 30px rgba(36, 29, 66, 0.08);
+    }
+    .rapid-mark {
+      width: 39px;
+      height: 39px;
+      border: 0;
+      border-radius: 10px;
+      background:
+        linear-gradient(var(--genesys), var(--genesys)) 16px 5px / 11px 7px no-repeat,
+        linear-gradient(var(--genesys), var(--genesys)) 7px 16px / 25px 7px no-repeat,
+        linear-gradient(var(--genesys), var(--genesys)) 11px 27px / 18px 7px no-repeat;
+      box-shadow: none;
+    }
+    .rapid-mark:before, .rapid-mark:after { display: none; }
+    .brand-text { color: var(--ink); font-weight: 800; letter-spacing: 0.025em; }
+    .brand-text span { color: var(--genesys); letter-spacing: 0.105em; font-weight: 700; }
+    .nav-links a { color: #5E5971; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); background: var(--genesys-lilac); }
+    .icon-btn {
+      color: #4F4965;
+      border-color: rgba(58, 50, 101, 0.16);
+      background: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(35, 28, 66, 0.06);
+    }
+    .icon-btn:hover { color: #fff; border-color: var(--genesys); background: var(--genesys); box-shadow: 0 8px 20px rgba(255, 79, 31, 0.24); }
+
+    .hero {
+      background:
+        radial-gradient(circle at 78% 18%, rgba(123, 102, 232, 0.30), transparent 29%),
+        radial-gradient(circle at 16% 28%, rgba(255, 79, 31, 0.20), transparent 25%),
+        radial-gradient(circle at 64% 86%, rgba(42, 96, 200, 0.15), transparent 26%),
+        linear-gradient(135deg, #171329 0%, #211A3A 52%, #2C2451 100%);
+    }
+    .hero:before {
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    }
+    .hero-orb {
+      background: radial-gradient(circle, rgba(123,102,232,0.34), rgba(42,96,200,0.10) 46%, transparent 70%);
+    }
+    .mini-pill { color: #ECE8F5; border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.075); }
+    .dot { background: var(--genesys); }
+    .dot.orange { background: var(--genesys-violet); }
+    .hero h1 { font-weight: 800; letter-spacing: -0.052em; }
+    .hero h1 strong { color: var(--genesys-2); font-weight: 900; }
+    .lead { color: #D8D4E5; font-weight: 400; }
+    .btn { border-radius: 10px; font-weight: 700; }
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #FF4F1F 0%, #FF7047 100%);
+      box-shadow: 0 14px 30px rgba(255,79,31,0.30);
+    }
+    .btn-primary:hover { box-shadow: 0 18px 38px rgba(255,79,31,0.38); }
+    .btn-secondary { color: #fff; border-color: rgba(255,255,255,0.20); background: rgba(255,255,255,0.08); }
+    .hero-note { color: #ACA7BF; }
+
+    .journey-board {
+      border-color: rgba(255,255,255,0.16);
+      background: linear-gradient(145deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+      box-shadow: 0 35px 90px rgba(10, 7, 24, 0.36);
+    }
+    .journey-board:before { background: radial-gradient(circle at 45% 45%, rgba(123,102,232,0.23), transparent 39%); }
+    .live-chip { color: #DDF9EF; border-color: rgba(66,197,158,0.34); background: rgba(66,197,158,0.12); }
+    .live-chip:before { background: var(--green); box-shadow: 0 0 12px var(--green); }
+    .map-node .node-circle { color: #D7D1FF; border-color: rgba(155,145,255,0.35); background: rgba(31,25,55,0.94); }
+    .car-runner { color: #fff; background: linear-gradient(135deg, var(--genesys), #FF7047); box-shadow: 0 12px 30px rgba(255,79,31,0.32); }
+    .car-runner:before, .car-runner:after { border-color: #F1EEFF; }
+    .promise-card { background: rgba(25,20,45,0.92); border-color: rgba(255,255,255,0.16); }
+    .promise-card small { color: var(--genesys-2); }
+    .hero-stat { border-color: rgba(255,255,255,0.13); background: rgba(255,255,255,0.06); }
+    .hero-stat strong { color: #fff; font-weight: 800; }
+    .hero-stat span { color: #B7B2C9; }
+
+    .eyebrow { color: var(--genesys); font-weight: 800; }
+    .section-dark .eyebrow, .section-ink .eyebrow { color: var(--genesys-2); }
+    .accent { color: var(--genesys); }
+    .accent-orange { color: var(--genesys-2); }
+    .section-dark { background: #211A3A; }
+    .section-ink { background: #292247; }
+    .section-white { background: #FFFFFF; }
+
+    .insight-banner {
+      border-color: rgba(123,102,232,0.24);
+      background: linear-gradient(105deg, rgba(238,234,248,0.95), rgba(255,255,255,0.96));
+    }
+    .insight-icon { color: var(--genesys); background: rgba(255,79,31,0.10); }
+    .scope-tag { color: #5E5971; background: #FFFFFF; border-color: rgba(48,40,88,0.13); }
+
+    .kpi-card, .evolution-card, .matrix-wrap, .activation-card, .phase-card, .metric-tree, .source-card {
+      border-color: rgba(48,40,88,0.12);
+      box-shadow: var(--shadow-soft);
+    }
+    .kpi-card:after { background: radial-gradient(circle, rgba(123,102,232,0.12), transparent 70%); }
+    .kpi-icon { color: #4D46B7; background: rgba(123,102,232,0.11); }
+    .kpi-card.orange .kpi-icon { color: #C83B10; background: rgba(255,79,31,0.11); }
+    .kpi-card.lime .kpi-icon { color: #19795F; background: rgba(66,197,158,0.14); }
+    .strategy-card, .method-card { background: linear-gradient(145deg, #211A3A, #2E2751); }
+    .strategy-card:before { background: radial-gradient(circle, rgba(123,102,232,0.28), transparent 70%); }
+    .north-star .star { color: #79E2C5; background: rgba(66,197,158,0.12); }
+    .evolution-box.target { color: #443D9D; border-color: rgba(123,102,232,0.22); background: rgba(123,102,232,0.09); }
+    .evolution-arrow { color: var(--genesys); }
+
+    .selector-btn { color: #C7C2D5; }
+    .selector-btn:hover, .selector-btn.active {
+      color: #fff;
+      border-color: rgba(255,135,99,0.60);
+      background: rgba(255,79,31,0.18);
+      box-shadow: inset 0 0 0 1px rgba(255,79,31,0.08);
+    }
+    .radar-card, .benchmark-card { background: rgba(255,255,255,0.055); border-color: rgba(255,255,255,0.14); }
+    .score-chip.rapid { color: #FFAF96; border-color: rgba(255,135,99,0.34); }
+    .company-mark { color: #fff; background: linear-gradient(135deg, var(--genesys), #FF7047); }
+    .territory { border-left-color: var(--genesys); background: rgba(255,255,255,0.065); }
+    .bar-fill { background: linear-gradient(90deg, var(--genesys), var(--genesys-2)); }
+
+    .matrix th { background: #F3F1F8; color: #6B667A; }
+    .matrix .rapid-col { background: rgba(255,79,31,0.045); }
+    .matrix th.rapid-col { color: #C83B10; }
+    .cell-mode.digital { color: #443D9D; background: rgba(123,102,232,0.13); }
+    .cell-mode.ecosystem { color: #AF3411; background: rgba(255,79,31,0.12); }
+    .cell-mode.transactional { color: #19795F; background: rgba(66,197,158,0.15); }
+    .matrix-note { background: #FAF9FC; }
+
+    .channel-tab:hover, .channel-tab.active, .usecase-btn:hover, .usecase-btn.active {
+      color: #fff;
+      border-color: var(--genesys);
+      background: var(--genesys);
+      box-shadow: 0 8px 18px rgba(255,79,31,0.18);
+    }
+    .detail-block.target { border-color: rgba(123,102,232,0.24); background: linear-gradient(135deg, rgba(123,102,232,0.08), rgba(255,79,31,0.055)); }
+    .detail-block.target .detail-icon, .play-icon { color: #D8D1FF; background: rgba(123,102,232,0.14); }
+
+    .token-card { background: linear-gradient(145deg, rgba(255,79,31,0.12), rgba(123,102,232,0.10)); border-color: rgba(255,135,99,0.28); }
+    .legend-swatch { background: var(--genesys-violet); }
+    .legend-swatch.orange { background: var(--genesys); }
+    .ladder-step.active { border-color: rgba(123,102,232,0.28); background: rgba(123,102,232,0.08); }
+    .ladder-step.next { border-color: rgba(255,79,31,0.28); background: rgba(255,79,31,0.065); }
+    .ladder-step.active .ladder-number { color: #fff; background: var(--genesys-violet); }
+    .ladder-step.next .ladder-number { background: var(--genesys); }
+    .usecase-state.target { border-color: rgba(123,102,232,0.22); background: linear-gradient(130deg, rgba(123,102,232,0.09), rgba(255,79,31,0.055)); }
+    .usecase-arrow { color: var(--genesys); }
+    .play-card:after { background: radial-gradient(circle, rgba(123,102,232,0.20), transparent 70%); }
+    .play-card .metric { color: #DDF9EF; background: rgba(66,197,158,0.11); }
+
+    .roadmap:before { background: linear-gradient(90deg, var(--genesys), var(--genesys-violet), var(--genesys-blue), var(--green)); opacity: 0.48; }
+    .phase-dot { background: var(--ink); box-shadow: 0 0 0 2px rgba(255,79,31,0.30); }
+    .phase:nth-child(1) .phase-dot { background: var(--genesys); }
+    .phase:nth-child(2) .phase-dot { background: #FF8763; }
+    .phase:nth-child(3) .phase-dot { background: var(--genesys-violet); }
+    .phase:nth-child(4) .phase-dot { background: var(--genesys-blue); }
+    .phase-time { color: #C83B10; background: rgba(255,79,31,0.10); }
+    .phase li:before { background: var(--genesys); }
+
+    .calculator { background: rgba(255,255,255,0.065); border-color: rgba(255,255,255,0.14); }
+    .slider-value { color: var(--genesys-2); }
+    input[type="range"] { accent-color: var(--genesys); }
+    .tree-root { border-color: rgba(123,102,232,0.20); background: linear-gradient(110deg, rgba(123,102,232,0.12), rgba(255,79,31,0.07)); }
+    .source-item .source-number { color: #C83B10; background: rgba(255,79,31,0.10); }
+    .source-item.external:hover strong { color: var(--genesys); }
+
+    .closing {
+      background:
+        radial-gradient(circle at 84% 20%, rgba(123,102,232,0.24), transparent 28%),
+        linear-gradient(120deg, #171329, #211A3A 50%, #302858);
+    }
+    .closing:after { background: radial-gradient(circle, rgba(255,79,31,0.22), transparent 70%); }
+    .closing-card span { color: var(--genesys-2); }
+    footer { background: #11101D; color: #9690A9; }
+    .g-dots i { background: var(--genesys); }
+
+    @media print {
+      .hero, .section-dark, .section-ink, .closing { background: #211A3A !important; }
+    }
+  
+
+    /* Evidence traceability and APA 7 references */
+    html { scroll-padding-top: 88px; }
+    .apa-citation {
+      display: inline;
+      color: #5B55C5;
+      font-size: 0.92em;
+      font-weight: 750;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(91,85,197,.48);
+      white-space: normal;
+    }
+    .apa-citation:hover { color: var(--genesys); border-bottom-color: var(--genesys); }
+    .section-dark .apa-citation, .section-ink .apa-citation, .hero .apa-citation, .closing .apa-citation {
+      color: #C8C1FF;
+      border-bottom-color: rgba(200,193,255,.46);
+    }
+    .section-dark .apa-citation:hover, .section-ink .apa-citation:hover, .hero .apa-citation:hover, .closing .apa-citation:hover {
+      color: #FF9B7D;
+      border-bottom-color: #FF9B7D;
+    }
+    .apa-citation-row {
+      display: block;
+      margin-top: 8px;
+      color: #777184;
+      font-size: 9px;
+      line-height: 1.48;
+    }
+    .source-note {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(42,30,70,.10);
+      color: #777184;
+      font-size: 9.5px;
+      line-height: 1.55;
+    }
+    .section-dark .source-note, .section-ink .source-note, .hero .source-note, .closing .source-note {
+      color: #AAA4B9;
+      border-top-color: rgba(255,255,255,.10);
+    }
+    .source-note strong { color: inherit; }
+    .stat-source {
+      display: block;
+      margin-top: 7px;
+      color: #A9A4B6;
+      font-size: 8px;
+      line-height: 1.35;
+    }
+    .evidence-framework {
+      display: grid;
+      grid-template-columns: 1.1fr repeat(4, minmax(130px, .72fr));
+      gap: 8px;
+      align-items: stretch;
+      margin-top: 18px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: rgba(255,255,255,.045);
+    }
+    .evidence-framework > strong {
+      display: flex;
+      align-items: center;
+      color: #F6F3FB;
+      font-size: 10px;
+      line-height: 1.35;
+      padding: 0 6px;
+    }
+    .evidence-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      padding: 6px 8px;
+      border-radius: 999px;
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+    }
+    .evidence-type::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
+    .evidence-public { color: #6E62D9; background: rgba(110,98,217,.10); border-color: rgba(110,98,217,.18); }
+    .evidence-internal { color: #C83B10; background: rgba(255,79,31,.10); border-color: rgba(255,79,31,.17); }
+    .evidence-analysis { color: #1A7E65; background: rgba(26,126,101,.10); border-color: rgba(26,126,101,.17); }
+    .evidence-hypothesis { color: #8B6A10; background: rgba(209,160,37,.11); border-color: rgba(209,160,37,.20); }
+    .hero .evidence-type { background: rgba(255,255,255,.055); }
+    .hero .evidence-public { color: #CFC8FF; border-color: rgba(207,200,255,.20); }
+    .hero .evidence-internal { color: #FF9B7D; border-color: rgba(255,155,125,.22); }
+    .hero .evidence-analysis { color: #82D9C0; border-color: rgba(130,217,192,.22); }
+    .hero .evidence-hypothesis { color: #F4D07A; border-color: rgba(244,208,122,.22); }
+    .evidence-box {
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #fff, #FAF9FC);
+      box-shadow: var(--shadow-soft);
+    }
+    .evidence-box h3 { margin: 8px 0 10px; font-size: 19px; }
+    .evidence-box p { color: var(--muted); font-size: 11px; line-height: 1.65; }
+    .evidence-box-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+    .evidence-fact { padding: 14px; border-radius: 14px; background: #F7F6FA; border: 1px solid var(--line); }
+    .evidence-fact span { display: block; color: #8A8498; font-size: 8px; text-transform: uppercase; letter-spacing: .08em; font-weight: 850; }
+    .evidence-fact strong { display: block; margin-top: 5px; font-size: 11px; line-height: 1.45; }
+    .scoring-method {
+      margin: 0 0 18px;
+      padding: 20px 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.045);
+    }
+    .scoring-method h3 { color: #fff; font-size: 16px; margin-bottom: 8px; }
+    .scoring-method p { color: #AAA4B9; font-size: 10px; line-height: 1.55; margin: 0; }
+    .score-scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin: 13px 0; }
+    .score-scale div { padding: 9px; border-radius: 10px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.08); }
+    .score-scale b { display: block; color: #FF8E6C; font-size: 12px; }
+    .score-scale span { color: #B6B0C6; font-size: 8px; line-height: 1.35; }
+    .company-source { margin-top: 10px; color: #938DA3; font-size: 9px; line-height: 1.5; }
+    .matrix .apa-citation-row { margin-top: 7px; }
+    .matrix td { vertical-align: top; }
+    .citation-disclosure {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(91,85,197,.06);
+      border: 1px solid rgba(91,85,197,.12);
+      color: #686274;
+      font-size: 10px;
+      line-height: 1.55;
+    }
+    .reference-intro {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .reference-summary-card {
+      padding: 17px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+    .reference-summary-card strong { display: block; color: var(--ink); font-size: 14px; }
+    .reference-summary-card span { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; line-height: 1.45; }
+    .reference-panel {
+      margin-top: 18px;
+      padding: 26px 28px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+    .reference-panel h3 { margin-bottom: 6px; font-size: 19px; }
+    .reference-panel > p { color: var(--muted); font-size: 10px; line-height: 1.55; }
+    .reference-list { margin-top: 20px; }
+    .reference-entry {
+      position: relative;
+      margin: 0 0 14px;
+      padding: 0 0 14px 28px;
+      text-indent: -28px;
+      border-bottom: 1px solid #EEEAF2;
+      color: #4D4857;
+      font-size: 11px;
+      line-height: 1.68;
+      overflow-wrap: anywhere;
+    }
+    .reference-entry:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .reference-entry:target {
+      margin-left: -10px;
+      padding-left: 38px;
+      padding-right: 10px;
+      border-radius: 10px;
+      background: rgba(255,79,31,.08);
+      scroll-margin-top: 100px;
+    }
+    .reference-entry a { color: #5B55C5; text-decoration: underline; text-decoration-thickness: .7px; text-underline-offset: 2px; }
+    .reference-entry em { color: #2C2734; }
+    .reference-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #F7F6FA;
+      color: #6E6878;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+    .claim-status {
+      display: inline-flex;
+      margin-left: 6px;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-size: 7px;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      vertical-align: 1px;
+      background: rgba(255,79,31,.10);
+      color: #B53813;
+    }
+    .claim-status.self-reported { background: rgba(209,160,37,.12); color: #84630C; }
+    .claim-status.analysis { background: rgba(26,126,101,.10); color: #176E59; }
+    .play-card .source-note, .phase-card .source-note { margin-top: 12px; }
+    .token-card .source-note, .activation-card .source-note { font-size: 9px; }
+    .governance-source { margin-top: 14px; color: #B2ACBF; font-size: 9px; line-height: 1.55; }
+    .detail-source { margin-top: 12px; color: #777184; font-size: 9px; line-height: 1.5; }
+
+    @media (max-width: 1050px) {
+      .evidence-framework { grid-template-columns: 1fr 1fr; }
+      .evidence-framework > strong { grid-column: 1 / -1; }
+      .evidence-box-grid, .reference-intro { grid-template-columns: 1fr 1fr; }
+      .score-scale { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 680px) {
+      .evidence-framework, .evidence-box-grid, .reference-intro, .score-scale { grid-template-columns: 1fr; }
+      .reference-panel { padding: 21px 18px; }
+      .reference-entry { font-size: 10px; }
+    }
+
+    /* ---------- Mejoras de accesibilidad, responsive e impresión ---------- */
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      z-index: 2000;
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: var(--genesys);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transform: translate(-50%, -170%);
+      transition: transform .18s ease;
+    }
+    .skip-link:focus { transform: translate(-50%, 0); }
+
+    :focus-visible {
+      outline: 2px solid var(--genesys);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+    .topbar :focus-visible { outline-color: var(--genesys); }
+
+    /* La navegación ya no desaparece en pantallas medianas: se vuelve deslizable */
+    @media (max-width: 1100px) {
+      .nav-wrap { gap: 12px; }
+      .nav-links {
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin: 0 4px;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links a { white-space: nowrap; padding: 8px 9px; font-size: 12px; }
+      .brand-lockup { min-width: 0; }
+      .brand-text span { display: none; }
+    }
+    @media (max-width: 620px) {
+      .nav-links { display: none; }
+    }
+
+    .reference-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .ref-copy-btn {
+      padding: 8px 14px;
+      border-radius: 9px;
+      border: 1px solid rgba(48, 40, 88, 0.16);
+      background: #fff;
+      color: #4F4965;
+      font-size: 11px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .ref-copy-btn:hover { color: #fff; border-color: var(--genesys); background: var(--genesys); }
+    .ref-copy-status { color: var(--muted); font-size: 10px; }
+
+    /* Volver de una referencia a la cita que la invocó */
+    .backref-link {
+      display: none;
+      margin-left: 8px;
+      padding: 1px 7px;
+      border-radius: 7px;
+      background: rgba(255, 79, 31, .10);
+      color: #B53813;
+      font-size: 9px;
+      font-weight: 800;
+      text-decoration: none;
+      text-indent: 0;
+      white-space: nowrap;
+    }
+    .reference-entry:target .backref-link { display: inline-block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .car-runner { display: none; }
+    }
+
+
+    .genesys-logo { height: 34px; width: auto; display: block; }
+    .genesys-logo.hero-logo { height: 48px; margin-bottom: 18px; filter: brightness(0) invert(1); opacity: .96; }
+    .genesys-logo.footer-logo { height: 24px; filter: brightness(0) invert(1); opacity: .9; }
+    .brand-lockup .genesys-logo { height: 26px; }
+    @media (max-width: 760px) { .brand-lockup .genesys-logo { height: 22px; } .genesys-logo.hero-logo { height: 40px; } }
+
+    @media print {
+      .skip-link, .reference-toolbar, .backref-link { display: none !important; }
+      .nav-links { display: none !important; }
+      .matrix-scroll { overflow: visible !important; }
+      .matrix { font-size: 8.5px; }
+      .channel-detail, .usecase-panel, .radar-card, .benchmark-card { break-inside: avoid; }
+      a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 7px; color: #5B5470; word-break: break-all; }
+      .reference-entry a:after { content: ""; }
+    }
+
+    @media print {
+      .apa-citation { color: #3E3764 !important; border-bottom: 0; }
+      .reference-entry { break-inside: avoid; }
+      .reference-panel, .evidence-box, .scoring-method { break-inside: avoid; box-shadow: none; }
+      .reference-entry a { color: #2D2742; }
+    }
+</style>
+<noscript>
+<style>
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .car-runner, .route-glow { animation: none; }
+</style>
+</noscript>
+</head>
+<body>
+<a class="skip-link" href="#inicio">Saltar al contenido</a>
+<svg aria-hidden="true" class="svg-defs">
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.9z"></path></symbol>
+<symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path><path d="M8 9h8M8 13h5"></path></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></symbol>
+<symbol id="i-web" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></symbol>
+<symbol id="i-bot" viewBox="0 0 24 24"><rect height="12" rx="3" width="16" x="4" y="7"></rect><path d="M9 12h.01M15 12h.01M9 16h6M12 3v4"></path></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"></circle><circle cx="18" cy="6" r="2"></circle><path d="M7.5 16.5c2-2 2-5 0-7s-1-5 1-6M16.5 7.5c-2 2-2 5 0 7s1 5-1 6"></path></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"></path></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3-1.4 4.2L6 8.5l3.7 2.7-1.4 4.3 3.7-2.7 3.7 2.7-1.4-4.3L18 8.5l-4.6-1.3z"></path><path d="M4 18l2 2M20 18l-2 2"></path></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z"></path><path d="M14 2v5h5M9 13h6M9 17h6"></path></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-5"></path></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5z"></path><path d="m3 12 9 5 9-5M3 17l9 5 9-5"></path></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></symbol>
+<symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect height="7" width="12" x="6" y="14"></rect></symbol>
+<symbol id="i-screen" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="4"></rect><path d="M8 22h8M12 18v4"></path></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7h.01"></path></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17h14l-1-6H6z"></path><path d="m7 11 2-4h6l2 4M5 17v2M19 17v2"></path><circle cx="8" cy="17" r="1"></circle><circle cx="16" cy="17" r="1"></circle></symbol>
+</svg>
+<div id="scrollProgress"></div>
+<header class="topbar">
+<div class="nav-wrap">
+<a aria-label="RapidAuto: diagnóstico consultivo de CX e IA" class="brand-lockup" href="#inicio">
+<img src="genesys_logo.png" alt="Genesys" class="genesys-logo"/>
+<span class="brand-text">RAPIDAUTO <span>DIAGNÓSTICO CONSULTIVO · GENESYS CLOUD</span></span>
+</a>
+<nav aria-label="Navegación principal" class="nav-links">
+<a href="#diagnostico">Diagnóstico</a>
+<a href="#benchmark">Benchmark</a>
+<a href="#canales">Canales</a>
+<a href="#ia">IA</a>
+<a href="#impacto">Impacto</a>
+<a href="#roadmap">Plan</a>
+<a href="#fuentes">Referencias APA</a>
+</nav>
+<div class="nav-actions">
+<button aria-label="Alternar modo presentación" class="icon-btn" id="presentationBtn" aria-pressed="false" title="Modo presentación (tecla P)">
+<svg class="icon"><use href="#i-screen"></use></svg>
+</button>
+<button aria-label="Imprimir o guardar como PDF" class="icon-btn" onclick="window.print()" title="Imprimir / Guardar PDF">
+<svg class="icon"><use href="#i-print"></use></svg>
+</button>
+</div>
+</div>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-orb"></div>
+<div class="container">
+<div class="hero-grid">
+<div class="reveal visible">
+<img src="genesys_logo.png" alt="Genesys" class="genesys-logo hero-logo"/>
+<div class="hero-kicker">
+<span class="mini-pill"><span class="dot"></span> Diagnóstico consultivo</span>
+<span class="mini-pill"><span class="dot orange"></span> IA aplicada a resultados</span>
+<span class="mini-pill"><span class="dot"></span> Benchmark de canales</span>
+<span class="mini-pill"><span class="dot orange"></span> Referencias APA 7</span></div>
+<h1>Diagnóstico de CX e inteligencia artificial: <strong>qué observar, dónde intervenir y qué validar.</strong></h1>
+<p class="lead">Análisis de las señales operativas, el uso actual de Genesys Cloud y la experiencia pública de los competidores. Los hechos se presentan con citas autor-fecha; las inferencias y recomendaciones se identifican como análisis propio o hipótesis por validar.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#diagnostico">Revisar hallazgos <svg class="icon"><use href="#i-arrow"></use></svg></a>
+<a class="btn btn-secondary" href="#ia">Evaluar prioridades de IA</a>
+</div>
+<div class="hero-note">
+<svg class="icon"><use href="#i-info"></use></svg>
+<span>Las fuentes competitivas son principalmente sitios oficiales y, en el caso de Kavak, una historia de éxito publicada por WhatsApp Business. Los indicadores operativos provienen de archivos internos no publicados. “No observado” describe el alcance de la revisión pública y no demuestra ausencia interna.</span>
+</div>
+<div class="evidence-framework">
+<strong>Cómo leer la evidencia de esta página</strong>
+<span class="evidence-type evidence-public">Fuente pública oficial</span>
+<span class="evidence-type evidence-internal">Dato interno</span>
+<span class="evidence-type evidence-analysis">Análisis propio</span>
+<span class="evidence-type evidence-hypothesis">Hipótesis por validar</span>
+</div>
+
+</div>
+<div class="journey-board reveal">
+<div class="board-head">
+<span class="board-title">Modelo de decisión de IA</span>
+<span class="live-chip">Hipótesis de diseño</span>
+</div>
+<div class="route-map">
+<svg aria-label="Ruta de señal a resultado de negocio" role="img" viewBox="0 0 610 390">
+<defs>
+<linearGradient id="routeGradient" x1="0" x2="1"><stop offset="0" stop-color="#FF4F1F"></stop><stop offset="0.52" stop-color="#7B66E8"></stop><stop offset="1" stop-color="#2A60C8"></stop></linearGradient>
+</defs>
+<path class="route-base" d="M48 315 C125 215 196 92 300 158 S426 327 555 140"></path>
+<path class="route-glow" d="M48 315 C125 215 196 92 300 158 S426 327 555 140"></path>
+</svg>
+<div class="map-node node-1"><span class="node-circle"><svg class="icon"><use href="#i-user"></use></svg></span><span class="node-label"><strong>Señal</strong>Intención o evento</span></div>
+<div class="map-node node-2"><span class="node-circle"><svg class="icon"><use href="#i-doc"></use></svg></span><span class="node-label"><strong>Contexto</strong>Cliente, caso y etapa</span></div>
+<div class="map-node node-3"><span class="node-circle"><svg class="icon"><use href="#i-spark"></use></svg></span><span class="node-label"><strong>Decisión</strong>Regla, modelo o prioridad</span></div>
+<div class="map-node node-4"><span class="node-circle"><svg class="icon"><use href="#i-shield"></use></svg></span><span class="node-label"><strong>Acción</strong>Respuesta, tarea o handoff</span></div>
+<div aria-hidden="true" class="car-runner"><svg class="icon icon-lg"><use href="#i-car"></use></svg></div>
+</div>
+<div class="promise-card"><span>Métrica integradora</span><strong>&lt; 72 h</strong><small>con trazabilidad de punta a punta</small></div>
+</div>
+</div>
+<div class="hero-stats reveal">
+<div class="hero-stat"><strong>2.5 / 5</strong><span>Madurez CX observable · hipótesis</span><small class="stat-source">Índice heurístico calculado como promedio simple de siete dimensiones. <a aria-label="Ver referencia (elaboración propia)" class="apa-citation" href="#ref-method-index">(elaboración propia)</a></small></div>
+<div class="hero-stat"><strong>75.9%</strong><span>Participación de interacciones salientes en julio</span><small class="stat-source">Fuente: <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></small></div>
+<div class="hero-stat"><strong>2.1%</strong><span>Live voice en Power Dialer</span><small class="stat-source">Fuente: <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></small></div>
+<div class="hero-stat"><strong>STA deshabilitado</strong><span>El consumo histórico de 150 tokens no representa uso actual</span><small class="stat-source">Los permisos fueron heredados de una configuración anterior y ya fueron revocados; actualmente no hay acceso a transcripciones.</small></div>
+</div>
+</div>
+</section>
+<section class="section section-white" id="diagnostico">
+<div class="container">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow">Situación observada</div>
+<h2>La operación ya genera señales suficientes; la brecha está en convertirlas en <span class="accent">decisiones y acciones.</span></h2>
+</div>
+<p class="section-copy">RapidAuto dispone de voz, WhatsApp y formularios, además de automatización básica. No tiene colas ni dominios de email configurados en Genesys y no utiliza el canal de correo en la plataforma. El diagnóstico no apunta a sumar canales por sí mismos, sino a conectar cada interacción con una solicitud, una etapa, una decisión y un resultado de negocio. <a aria-label="Ver referencia (RapidAuto, s. f.; RapidAuto, 2026a, 2026b)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.; RapidAuto, 2026a, 2026b)</a></p>
+</div>
+<div class="insight-banner reveal">
+<div class="insight-icon"><svg class="icon icon-lg"><use href="#i-info"></use></svg></div>
+<div>
+<h3>Alcance y limitación de los datos</h3>
+<p>El reporte de julio agrega RapidAutos, Home y registros compartidos. Antes de establecer metas o atribuir impacto financiero, las métricas deben aislarse por división y vincularse con resultados como aprobación, contrato, pago, promesa cumplida o resolución. <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></p>
+</div>
+<span class="scope-tag">Diagnóstico preliminar</span>
+</div>
+<div class="kpi-grid reveal">
+<article class="kpi-card">
+<div class="kpi-icon"><svg class="icon"><use href="#i-layers"></use></svg></div>
+<strong>156,350</strong>
+<span>Interacciones reportadas</span>
+<small>Volumen total de julio 2026 en la organización analizada.</small>
+<div class="source-note"><span class="evidence-type evidence-internal">Dato interno</span><br/>Fuente: <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></div></article>
+<article class="kpi-card orange">
+<div class="kpi-icon"><svg class="icon"><use href="#i-phone"></use></svg></div>
+<strong>118,642</strong>
+<span>Interacciones salientes puras</span>
+<small>Voz, devolución de llamada y mensajes clasificados como salientes.</small>
+<div class="source-note"><span class="evidence-type evidence-analysis">Cálculo propio</span><br/>Fuente: <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></div></article>
+<article class="kpi-card">
+<div class="kpi-icon"><svg class="icon"><use href="#i-target"></use></svg></div>
+<strong>1,337</strong>
+<span>Live voice en Power Dialer</span>
+<small>De 64,342 intentos identificados en campañas Power Dialer.</small>
+<div class="source-note"><span class="evidence-type evidence-analysis">Cálculo propio</span><br/>Fuente: <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></div></article>
+<article class="kpi-card lime">
+<div class="kpi-icon"><svg class="icon"><use href="#i-message"></use></svg></div>
+<strong>227</strong>
+<span>Transferencias digitales a ACD</span>
+<small>Indican triage activo; falta medir resolución autónoma y calidad del contexto transferido.</small>
+<div class="source-note"><span class="evidence-type evidence-internal">Dato interno</span><br/>Fuente: <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></div></article>
+<article class="kpi-card orange">
+<div class="kpi-icon"><svg class="icon"><use href="#i-spark"></use></svg></div>
+<strong>0</strong>
+<span>Tokens en Copilot, VA y Predictive Routing</span>
+<small>STA no se considera adopción actual: el consumo histórico provino de permisos heredados que ya fueron revocados.</small>
+<div class="source-note"><span class="evidence-type evidence-internal">Dato interno</span><br/>Fuente: <a aria-label="Ver referencia (RapidAuto, 2026b)" class="apa-citation" href="#ref-internal-billing">(RapidAuto, 2026b)</a></div></article>
+</div>
+<div class="strategy-split reveal">
+<div class="strategy-card">
+<div class="eyebrow">Hipótesis de trabajo</div>
+<h3>El desempeño del journey puede estar condicionado por la desconexión entre interacción, solicitud y resultado.</h3>
+<p>La promesa de aprobación en menos de 72 horas depende de más que el tiempo de underwriting. Esperas, recontactos, documentos faltantes, transferencias y campañas redundantes pueden consumir una parte relevante de ese plazo. <a aria-label="Ver referencia (RapidAuto, s. f.; CX Safari — RapidAuto México, 2026)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.; CX Safari — RapidAuto México, 2026)</a></p>
+<div class="north-star">
+<span class="star"><svg class="icon icon-lg"><use href="#i-target"></use></svg></span>
+<span><strong>Métrica integradora</strong><span>% de solicitudes resueltas dentro de 72 horas, sin repetición de datos y con estatus proactivo.</span></span>
+</div><div class="source-note"><span class="evidence-type evidence-analysis">Métrica propuesta</span> La métrica integradora es una recomendación del diagnóstico y debe calcularse su línea base con datos de solicitudes.</div>
+</div>
+<div class="evolution-card">
+<h3>Brechas de uso a evaluar</h3>
+<div class="evolution-row">
+<span class="evolution-label">Voz</span>
+<div class="evolution-box">Marcación, IVR y colas especializadas</div>
+<div class="evolution-arrow"><svg class="icon"><use href="#i-arrow"></use></svg></div>
+<div class="evolution-box target">Selección de canal y horario, Copilot y registro automático del resultado</div>
+</div>
+<div class="evolution-row">
+<span class="evolution-label">WhatsApp</span>
+<div class="evolution-box">Atención, cobranza y transferencia a agentes</div>
+<div class="evolution-arrow"><svg class="icon"><use href="#i-arrow"></use></svg></div>
+<div class="evolution-box target">Autoservicio transaccional autenticado y handoff con contexto</div>
+</div>
+<div class="evolution-row">
+<span class="evolution-label">Web</span>
+<div class="evolution-box">FAQ, formulario y solicitud digital</div>
+<div class="evolution-arrow"><svg class="icon"><use href="#i-arrow"></use></svg></div>
+<div class="evolution-box target">Intervención por comportamiento y captura guiada de datos o documentos</div>
+</div>
+<div class="evolution-row">
+<span class="evolution-label">Analítica</span>
+<div class="evolution-box">STA deshabilitado; sin acceso actual a transcripciones</div>
+<div class="evolution-arrow"><svg class="icon"><use href="#i-arrow"></use></svg></div>
+<div class="evolution-box target">Insights que cambian prioridad, tarea, mensaje o siguiente acción</div>
+</div>
+<div class="source-note"><strong>Capacidades de referencia:</strong> <a aria-label="Ver referencia (Genesys, s. f.-a)" class="apa-citation" href="#ref-genesys-copilot">(Genesys, s. f.-a)</a>, <a aria-label="Ver referencia (Genesys, s. f.-b)" class="apa-citation" href="#ref-genesys-predictive">(Genesys, s. f.-b)</a>, <a aria-label="Ver referencia (Genesys, s. f.-c)" class="apa-citation" href="#ref-genesys-whatsapp">(Genesys, s. f.-c)</a>, <a aria-label="Ver referencia (Genesys, s. f.-d)" class="apa-citation" href="#ref-genesys-sta">(Genesys, s. f.-d)</a> y <a aria-label="Ver referencia (Genesys, s. f.-e)" class="apa-citation" href="#ref-genesys-journey">(Genesys, s. f.-e)</a>.</div></div>
+</div>
+<div class="consultative-grid reveal">
+<article class="consultative-card"><span>Señal</span><strong>La operación está orientada principalmente a outbound.</strong><p>La proporción saliente y el live voice observado sugieren revisar calidad de datos, horario, canal, secuencia y supresión por evento.</p><div class="source-note"><span class="evidence-type evidence-internal">Dato interno</span><br/><a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></div></article>
+<article class="consultative-card"><span>Hipótesis</span><strong>El contexto puede fragmentarse entre canales y etapas.</strong><p>Debe validarse si WhatsApp, voz, formularios, documentos y cobranza comparten un identificador y una historia única.</p><div class="source-note"><span class="evidence-type evidence-hypothesis">Hipótesis por validar</span><br/>Requiere ID único y prueba de continuidad entre canales.</div></article>
+<article class="consultative-card"><span>Validación</span><strong>La interacción debe vincularse con el resultado de negocio.</strong><p>Sin aprobación, contrato, pago o resolución como outcome, la IA solo optimiza actividad y no necesariamente valor.</p><div class="source-note"><span class="evidence-type evidence-analysis">Criterio analítico</span><br/>La atribución requiere outcomes del sistema de negocio.</div></article>
+<article class="consultative-card"><span>Decisión inicial</span><strong>Priorizar asistencia y contactabilidad antes de escalar autonomía.</strong><p>Copilot, knowledge y experimentos outbound tienen menor dependencia y permiten construir evidencia para automatización posterior.</p><div class="source-note"><span class="evidence-type evidence-analysis">Recomendación</span><br/>Basada en dependencias observadas y capacidades de <a aria-label="Ver referencia Genesys (s. f.-a, s. f.-g)" class="apa-citation" href="#ref-genesys-copilot">Genesys (s. f.-a, s. f.-g)</a>.</div></article>
+</div>
+</div>
+</section>
+<section class="section section-dark" id="benchmark">
+<div class="container">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow">Benchmark consultivo</div>
+<h2>El diferencial competitivo está en la profundidad de resolución, no en la <span class="accent">cantidad de canales.</span></h2>
+</div>
+<p class="section-copy">Selecciona un competidor para contrastar accesibilidad, autoservicio, control transaccional, continuidad, personalización, ecosistema e IA conversacional. La puntuación es heurística y no sustituye métricas internas de satisfacción o conversión.</p>
+</div>
+<div class="scoring-method reveal" id="ref-method-index">
+<h3>Método del índice de madurez observable</h3>
+<p>La puntuación no proviene de una firma de investigación ni de las empresas. Es un índice heurístico elaborado para esta página con siete dimensiones y promedio aritmético simple. La evidencia procede de canales públicos oficiales; no mide NPS, CSAT, conversión ni desempeño interno.</p>
+<div class="score-scale">
+<div><b>1</b><span>No observado o altamente fragmentado</span></div>
+<div><b>2</b><span>Presencia informativa o asistida</span></div>
+<div><b>3</b><span>Transacción parcial y continuidad limitada</span></div>
+<div><b>4</b><span>Journey integrado y contextual</span></div>
+<div><b>5</b><span>Resolución end-to-end, personalizada o agéntica</span></div>
+</div>
+<p>Fuentes base: <a class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a>, <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a>, <a class="apa-citation" href="#ref-kavak-contact">(Kavak, s. f.-a)</a>, <a class="apa-citation" href="#ref-whatsapp-kavak">(WhatsApp Business, s. f.)</a> y <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>.</p>
+</div><div aria-label="Seleccionar competidor" class="benchmark-controls reveal" role="group">
+<button class="selector-btn active" aria-pressed="true" data-company="clikauto">ClikAuto</button>
+<button class="selector-btn" aria-pressed="false" data-company="kavak">Kavak</button>
+<button class="selector-btn" aria-pressed="false" data-company="nissan">Credi Nissan</button>
+<button class="selector-btn" aria-pressed="false" data-company="bbva">BBVA Automarket</button>
+</div>
+<div class="benchmark-grid reveal">
+<div class="radar-card">
+<div class="radar-card-head">
+<h3>Madurez observable por dimensión</h3>
+<div class="score-pair"><span class="score-chip rapid">RapidAuto 2.5</span><span class="score-chip" id="selectedScoreChip">ClikAuto 3.7</span></div>
+</div>
+<svg aria-label="Radar comparativo de madurez CX" role="img" id="radarChart" viewBox="0 0 560 430"><desc id="radarDesc">Comparativo de siete dimensiones de madurez observable. Los valores exactos aparecen en la lista de dimensiones que acompaña al gráfico.</desc></svg>
+<div class="radar-note">Escala 1 a 5. Promedio simple de siete dimensiones. La puntuación es elaboración propia y describe únicamente la experiencia pública revisada. <a aria-label="Ver referencia (metodología del diagnóstico)" class="apa-citation" href="#ref-method-index">(metodología del diagnóstico)</a></div>
+</div>
+<div class="benchmark-card">
+<div class="company-head">
+<div class="company-identity">
+<div class="company-mark" id="companyMark">CA</div>
+<div><div class="company-name" id="companyName">ClikAuto</div><div style="color:#8196ad;font-size:10px;">Patrón de experiencia observado</div></div>
+</div>
+<div class="company-score"><span id="companyScore">3.7</span> <small>/ 5</small></div>
+</div>
+<div class="territory"><span>Experiencia observable</span><strong id="companyTerritory">Puedo configurar mi compra y avanzar desde el celular.</strong></div><div class="company-source" id="companySource">Fuente principal: <a aria-label="Ver referencia (ClikAuto, s. f.-a, s. f.-b)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a, s. f.-b)</a></div>
+<div class="dimension-list" id="dimensionList"></div>
+<div class="benchmark-callout" id="benchmarkCallout"><strong>Lectura comparativa:</strong> la inclusión crediticia puede fortalecerse con mayor control visible sobre estatus, documentos y siguientes pasos.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-white" id="canales">
+<div class="container">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow">Comparativo de canales</div>
+<h2>Cada canal debe evaluarse por la decisión que habilita y el <span class="accent">trabajo que completa.</span></h2>
+</div>
+<p class="section-copy">El análisis distingue presencia, profundidad transaccional, continuidad y uso de IA. El objetivo es identificar qué pasos puede resolver cada canal, qué información necesita y cuándo debe intervenir una persona.</p>
+</div>
+<div class="verification-banner reveal">
+<div class="verification-icon">IA</div>
+<div>
+<span class="verification-kicker">Evidencia competitiva documentada</span>
+<h3>Kavak: WhatsApp 24/7 y operación con agentes de IA están documentados públicamente.</h3>
+<p>La página de contacto de Kavak publica WhatsApp disponible 24/7 y una respuesta estimada de alrededor de cinco minutos. Una historia de éxito de WhatsApp Business señala que Kavak utiliza agentes de IA desde 2023 a lo largo del journey —descubrimiento, financiamiento e inspecciones— y que Meta Business Agent transfiere las conversaciones a los agentes de IA de Kavak con el contexto previo. <a aria-label="Ver referencia (Kavak, s. f.-a; WhatsApp Business, s. f.)" class="apa-citation" href="#ref-whatsapp-kavak">(Kavak, s. f.-a; WhatsApp Business, s. f.)</a></p>
+<p>Un artículo corporativo de Kavak publicado el 18 de agosto de 2026 reporta 100,000–200,000 agentes de IA diarios y 96% de interacciones sin humano; se presenta como <strong>afirmación de la propia empresa</strong>, no como resultado auditado de forma independiente. <a aria-label="Ver referencia (Kavak, 2026b)" class="apa-citation" href="#ref-kavak-ai-blog">(Kavak, 2026b)</a> <span class="claim-status self-reported">Autorreporte</span></p>
+<div class="evidence-legend">
+<span class="evidence-chip"><i class="evidence-dot"></i> Confirmado por fuente oficial</span>
+<span class="evidence-chip"><i class="evidence-dot observed"></i> Dato interno</span>
+<span class="evidence-chip"><i class="evidence-dot unknown"></i> Análisis o por validar</span>
+</div>
+</div>
+</div>
+<div class="evidence-box reveal">
+<span class="evidence-type evidence-analysis">Lectura consultiva</span>
+<h3>El benchmark no equipara “tener WhatsApp” con resolver el journey.</h3>
+<p>La comparación distingue presencia del canal, continuidad del contexto y capacidad de ejecutar acciones. En Kavak existe evidencia pública de calificación, personalización basada en actividad previa y handoff con contexto a agentes de IA; en RapidAuto, el snapshot muestra analítica y bot flow, pero no consumo de Agentic Virtual Agent, Virtual Agent, Copilot Action o Predictive Routing. <a aria-label="Ver referencia (RapidAuto, 2026b; WhatsApp Business, s. f.)" class="apa-citation" href="#ref-internal-billing">(RapidAuto, 2026b; WhatsApp Business, s. f.)</a></p>
+<div class="evidence-box-grid">
+<div class="evidence-fact"><span>Confirmado</span><strong>WhatsApp 24/7 y respuesta aproximada de 5 minutos en Kavak.</strong></div>
+<div class="evidence-fact"><span>Confirmado</span><strong>Agentes de IA desde 2023 y transferencia de contexto documentada por WhatsApp Business.</strong></div>
+<div class="evidence-fact"><span>No público</span><strong>Detalle completo del stack, modelos, controles internos y resultados auditados.</strong></div>
+</div>
+</div>
+
+<div class="matrix-wrap reveal">
+<div class="matrix-scroll">
+<table class="matrix">
+<thead>
+<tr><th>Canal / capacidad</th><th class="rapid-col">RapidAuto</th><th>ClikAuto</th><th>Kavak</th><th>Credi Nissan</th><th>BBVA Automarket</th><th>Implicación de diseño de IA</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Voz</td>
+<td class="rapid-col"><span class="cell-mode assisted">Especializada</span><br/>Líneas diferenciadas para servicio, cobranza y carteras; el informe interno muestra IVR, colas y alto volumen saliente.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, s. f.)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a>; <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></span></td>
+<td><span class="cell-mode assisted">Teléfono de apoyo</span><br/>ClikAuto publica teléfono, correo y WhatsApp como apoyo a un journey donde la búsqueda, preaprobación y contrato avanzan digitalmente.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a></span></td>
+<td><span class="cell-mode digital">WhatsApp prioritario</span><br/>La página de contacto prioriza WhatsApp; una FAQ de la app también publica atención telefónica.<span class="apa-citation-row"><a aria-label="Ver referencia (Kavak, s. f.-a)" class="apa-citation" href="#ref-kavak-contact">(Kavak, s. f.-a)</a>; <a aria-label="Ver referencia (Kavak, 2026a)" class="apa-citation" href="#ref-kavak-app">(Kavak, 2026a)</a></span></td>
+<td><span class="cell-mode ecosystem">Línea 800 + red</span><br/>Credi Nissan publica atención 800 y acceso a distribuidores autorizados.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode unknown">No observado</span><br/>La revisión compartida no identificó canal de voz en BBVA Automarket.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Detección de intención, transcripción, Copilot y routing orientado a outcome.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-a, s. f.-d, s. f.-h)" class="apa-citation" href="#ref-genesys-copilot">(Genesys, s. f.-a, s. f.-d, s. f.-h)</a></span></td>
+</tr>
+<tr>
+<td>WhatsApp</td>
+<td class="rapid-col"><span class="cell-mode assisted">Servicio y cobranza</span><br/>RapidAuto publica números distintos para servicio y cobranza; el billing muestra un conector ApifyCloud BYO-BSP.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, s. f.)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a>; <a aria-label="Ver referencia (RapidAuto, 2026b)" class="apa-citation" href="#ref-internal-billing">(RapidAuto, 2026b)</a></span></td>
+<td><span class="cell-mode digital">Compra y soporte</span><br/>El sitio incluye un CTA de WhatsApp junto con teléfono, email y sucursales.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a>; <a aria-label="Ver referencia (ClikAuto, s. f.-b)" class="apa-citation" href="#ref-clik-credit">(ClikAuto, s. f.-b)</a></span></td>
+<td><span class="cell-mode agentic">24/7 + contexto</span><br/>Kavak publica disponibilidad 24/7 y ~5 minutos de respuesta; WhatsApp Business documenta personalización con actividad previa y handoff con contexto.<span class="apa-citation-row"><a aria-label="Ver referencia (Kavak, s. f.-a)" class="apa-citation" href="#ref-kavak-contact">(Kavak, s. f.-a)</a>; <a aria-label="Ver referencia (WhatsApp Business, s. f.)" class="apa-citation" href="#ref-whatsapp-kavak">(WhatsApp Business, s. f.)</a></span></td>
+<td><span class="cell-mode ecosystem">Canal oficial</span><br/>WhatsApp aparece en el menú de contacto junto con la línea 800 y el ecosistema Nissan.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode unknown">No observado</span><br/>No se identificó WhatsApp como canal en la experiencia revisada.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Virtual Agent autenticado, documentos, estatus, pagos, notificaciones y handoff contextual.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-c, s. f.-f)" class="apa-citation" href="#ref-genesys-whatsapp">(Genesys, s. f.-c, s. f.-f)</a></span></td>
+</tr>
+<tr>
+<td>IA conversacional / agéntica</td>
+<td class="rapid-col"><span class="cell-mode assisted">STA no utilizado actualmente</span><br/>El snapshot reflejó 150 tokens de Speech &amp; Text Analytics por permisos heredados del administrador anterior. Tras el cambio de tarifación, el consumo comenzó a reflejarse; los permisos ya fueron revocados y hoy el cliente no tiene acceso a transcripciones. El snapshot también muestra 5 tokens en Bot Flow Digital y 0 en Agentic VA, Virtual Agent, Copilot Action y Predictive Routing.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, 2026b)" class="apa-citation" href="#ref-internal-billing">(RapidAuto, 2026b)</a></span></td>
+<td><span class="cell-mode unknown">No observada</span><br/>Las páginas oficiales revisadas muestran un journey digital, pero no identifican un agente agéntico. Esto no demuestra ausencia interna.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a, s. f.-b)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a, s. f.-b)</a></span></td>
+<td><span class="cell-mode agentic">Evidencia pública fuerte</span><br/>WhatsApp Business documenta agentes de IA de Kavak desde 2023 en descubrimiento, financiamiento e inspecciones; Kopi se presenta como asistente virtual.<span class="apa-citation-row"><a aria-label="Ver referencia (WhatsApp Business, s. f.)" class="apa-citation" href="#ref-whatsapp-kavak">(WhatsApp Business, s. f.)</a>; <a aria-label="Ver referencia (Kavak, s. f.-b)" class="apa-citation" href="#ref-kavak-kopi">(Kavak, s. f.-b)</a></span></td>
+<td><span class="cell-mode unknown">No observada</span><br/>El sitio confirma WhatsApp, login, cotizador y red, pero no identifica un agente agéntico en la experiencia revisada.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode digital">Chatbot + Predictive Engagement</span><br/>Se observaron capacidades de Predictive Engagement y chatbot; no se identificó un agente agéntico.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Agentic VA con conocimiento confiable, herramientas aprobadas, confirmación, auditoría y escalamiento.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-f, s. f.-g, s. f.-i)" class="apa-citation" href="#ref-genesys-ava">(Genesys, s. f.-f, s. f.-g, s. f.-i)</a>; <a aria-label="Ver referencia (Tabassi, 2023)" class="apa-citation" href="#ref-tabassi">(Tabassi, 2023)</a></span></td>
+</tr>
+<tr>
+<td>Email / contacto</td>
+<td class="rapid-col"><span class="cell-mode unknown">No configurado en Genesys</span><br/>El cliente no tiene dominios ni colas de email configurados en Genesys y no utiliza el canal de correo en la plataforma. La existencia de correos publicados externamente no implica uso operativo dentro de Genesys.</td>
+<td><span class="cell-mode digital">Email + teléfono + WhatsApp</span><br/>Los tres canales se publican en el sitio y complementan el proceso digital.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a></span></td>
+<td><span class="cell-mode digital">Contacto directo</span><br/>La página conduce a WhatsApp y FAQ en lugar de un formulario de espera.<span class="apa-citation-row"><a aria-label="Ver referencia (Kavak, s. f.-a)" class="apa-citation" href="#ref-kavak-contact">(Kavak, s. f.-a)</a></span></td>
+<td><span class="cell-mode ecosystem">Contacto integrado</span><br/>Línea 800, WhatsApp, ayuda y red autorizada conviven en la navegación.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode digital">Email disponible</span><br/>El correo electrónico forma parte de los puntos de contacto observados.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Clasificación, conocimiento contextual, respuesta asistida y creación de casos o tareas.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-a, s. f.-g, s. f.-j)" class="apa-citation" href="#ref-genesys-copilot">(Genesys, s. f.-a, s. f.-g, s. f.-j)</a></span></td>
+</tr>
+<tr>
+<td>Web / autoservicio</td>
+<td class="rapid-col"><span class="cell-mode assisted">Informativo + solicitud</span><br/>RapidAuto publica FAQ, requisitos, trámite digital y acompañamiento del asesor; el control detallado del estatus no es visible públicamente.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, s. f.)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a></span></td>
+<td><span class="cell-mode transactional">Transaccional</span><br/>El cliente puede encontrar un auto, configurar la compra, obtener preaprobación desde el celular y firmar contrato digital.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a></span></td>
+<td><span class="cell-mode transactional">Journey integrado</span><br/>Catálogo, financiamiento, cuenta/app y Kopi forman parte del ecosistema digital de compra.<span class="apa-citation-row"><a aria-label="Ver referencia (Kavak, 2026a)" class="apa-citation" href="#ref-kavak-app">(Kavak, 2026a)</a>; <a aria-label="Ver referencia (Kavak, s. f.-b)" class="apa-citation" href="#ref-kavak-kopi">(Kavak, s. f.-b)</a></span></td>
+<td><span class="cell-mode ecosystem">Financiamiento + red</span><br/>Soluciones financieras, cotizador, Mi Garage/login, ayuda y distribuidor autorizado están expuestos en el sitio.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode transactional">Predictive Engagement + chatbot</span><br/>La web combina engagement predictivo, chatbot y formulario para captar y asistir intención.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Predictive Engagement y mensajería para intervenir ante abandono o intención relevante.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-b, s. f.-c)" class="apa-citation" href="#ref-genesys-predictive">(Genesys, s. f.-b, s. f.-c)</a></span></td>
+</tr>
+<tr>
+<td>Portal / login</td>
+<td class="rapid-col"><span class="cell-mode unknown">No observado</span><br/>No se identificó un portal/login en la experiencia pública principal revisada. La afirmación se limita al front-end público.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, s. f.)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a>; <a aria-label="Ver referencia (CX Safari — RapidAuto México, 2026)" class="apa-citation" href="#ref-internal-cx">(CX Safari — RapidAuto México, 2026)</a></span></td>
+<td><span class="cell-mode digital">Journey digital</span><br/>La compra avanza en web; el login no es el centro visible de la página principal revisada.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a></span></td>
+<td><span class="cell-mode transactional">Cuenta y app</span><br/>Kavak documenta el ingreso a su app mediante correo y código de verificación.<span class="apa-citation-row"><a aria-label="Ver referencia (Kavak, 2026a)" class="apa-citation" href="#ref-kavak-app">(Kavak, 2026a)</a></span></td>
+<td><span class="cell-mode ecosystem">Mi Garage + login</span><br/>La navegación incluye Mi Garage e inicio de sesión.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode unknown">Por validar</span><br/>La revisión compartida no aportó evidencia suficiente para calificar portal o login.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Case Management, Work Automation y journey data pueden entregar estatus y trazabilidad sin sustituir al sistema de crédito.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-e, s. f.-j)" class="apa-citation" href="#ref-genesys-journey">(Genesys, s. f.-e, s. f.-j)</a></span></td>
+</tr>
+<tr>
+<td>Knowledge / FAQ</td>
+<td class="rapid-col"><span class="cell-mode digital">Base inicial</span><br/>FAQ sobre requisitos, Buró, plazos, enganche y modelos financiables.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, s. f.)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a></span></td>
+<td><span class="cell-mode digital">Contenido de compra y crédito</span><br/>El sitio combina guías, blog y preguntas de crédito con los pasos de compra.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a, s. f.-b)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a, s. f.-b)</a></span></td>
+<td><span class="cell-mode ecosystem">FAQ + asistente</span><br/>Centro de preguntas y Kopi se integran al ecosistema de compra y soporte.<span class="apa-citation-row"><a aria-label="Ver referencia (Kavak, s. f.-a, s. f.-b)" class="apa-citation" href="#ref-kavak-contact">(Kavak, s. f.-a, s. f.-b)</a></span></td>
+<td><span class="cell-mode ecosystem">Ayuda y educación financiera</span><br/>La navegación expone ayuda, educación financiera y soluciones por producto.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode unknown">Por validar</span><br/>No se aportó evidencia suficiente para calificar una base de conocimiento pública.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Knowledge Fabric para unificar fuentes y responder con contexto y trazabilidad.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-g)" class="apa-citation" href="#ref-genesys-knowledge">(Genesys, s. f.-g)</a></span></td>
+</tr>
+<tr>
+<td>Canal físico</td>
+<td class="rapid-col"><span class="cell-mode unknown">No central en el sitio</span><br/>La experiencia pública revisada se concentra en trámite digital y asesoría; no presenta una red física como eje.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, s. f.)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a></span></td>
+<td><span class="cell-mode assisted">Sucursales</span><br/>ClikAuto publica sucursales y combina inspección o entrega con el journey digital.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a></span></td>
+<td><span class="cell-mode transactional">Sedes</span><br/>El sitio incorpora sedes a los journeys de compra, venta y cuidado del auto.<span class="apa-citation-row"><a aria-label="Ver referencia (Kavak, s. f.-a)" class="apa-citation" href="#ref-kavak-contact">(Kavak, s. f.-a)</a></span></td>
+<td><span class="cell-mode ecosystem">Distribuidores</span><br/>La red autorizada es parte explícita de la experiencia y del acceso a productos.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode unknown">No evaluado</span><br/>El alcance revisado se concentró en la experiencia digital.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Agendamiento, contexto previo y continuidad digital-física mediante un caso y journey compartidos.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-e, s. f.-j)" class="apa-citation" href="#ref-genesys-journey">(Genesys, s. f.-e, s. f.-j)</a></span></td>
+</tr>
+<tr>
+<td>Outbound</td>
+<td class="rapid-col"><span class="cell-mode assisted">Alta intensidad</span><br/>El informe registra Power Dialer, marcación progresiva y mensajería saliente; 75.9% del volumen total se clasificó como saliente puro.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></span></td>
+<td><span class="cell-mode unknown">No evaluable</span><br/>La operación interna de campañas no está disponible en las fuentes públicas revisadas.</td>
+<td><span class="cell-mode unknown">No evaluable</span><br/>La operación interna de campañas no está disponible en las fuentes públicas revisadas.</td>
+<td><span class="cell-mode unknown">No evaluable</span><br/>La operación interna de campañas no está disponible en las fuentes públicas revisadas.</td>
+<td><span class="cell-mode unknown">No evaluable</span><br/>La operación interna de campañas no fue parte de la evidencia compartida.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Mejor canal/horario, priorización, supresión por evento y medición contra resultado.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-b, s. f.-h)" class="apa-citation" href="#ref-genesys-predictive">(Genesys, s. f.-b, s. f.-h)</a></span></td>
+</tr>
+<tr>
+<td>Continuidad omnicanal</td>
+<td class="rapid-col"><span class="cell-mode assisted">Por validar</span><br/>Voz, WhatsApp y formulario están disponibles; no es visible si comparten identidad, contexto y outcome. Email no se utiliza en Genesys.<span class="apa-citation-row"><a aria-label="Ver referencia (RapidAuto, s. f.)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a>; <a aria-label="Ver referencia (CX Safari — RapidAuto México, 2026)" class="apa-citation" href="#ref-internal-cx">(CX Safari — RapidAuto México, 2026)</a></span></td>
+<td><span class="cell-mode digital">Digital-first</span><br/>Más pasos —búsqueda, configuración, preaprobación y contrato— permanecen en el mismo journey digital.<span class="apa-citation-row"><a aria-label="Ver referencia (ClikAuto, s. f.-a)" class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a></span></td>
+<td><span class="cell-mode agentic">Contexto documentado</span><br/>WhatsApp Business describe transferencia hacia agentes de IA de Kavak con preferencias y respuestas previas completas.<span class="apa-citation-row"><a aria-label="Ver referencia (WhatsApp Business, s. f.)" class="apa-citation" href="#ref-whatsapp-kavak">(WhatsApp Business, s. f.)</a></span></td>
+<td><span class="cell-mode ecosystem">Continuidad de ecosistema</span><br/>Marca, financiera, login, ayuda y distribuidores crean múltiples puntos de continuidad.<span class="apa-citation-row"><a aria-label="Ver referencia (Nissan México, s. f.)" class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a></span></td>
+<td><span class="cell-mode assisted">Digital por validar</span><br/>Web, chatbot, formulario y email están presentes; queda por validar si comparten identidad, contexto y outcome.</td>
+<td><span class="evidence-type evidence-analysis">Diseño propuesto</span><br/>Unificar eventos de interacción y negocio en un journey; conservar contexto entre automatización y humano.<span class="apa-citation-row"><a aria-label="Ver referencia (Genesys, s. f.-c, s. f.-e)" class="apa-citation" href="#ref-genesys-whatsapp">(Genesys, s. f.-c, s. f.-e)</a></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="matrix-note"><strong>Criterio:</strong> “No observado” significa que la capacidad no fue identificada en las páginas oficiales revisadas; no equivale a ausencia interna. Las fuentes competitivas son mayoritariamente first-party y describen la experiencia que cada empresa comunica públicamente. Las recomendaciones de IA son elaboración propia sustentada en capacidades oficiales de Genesys y deben validarse contra entitlement, región, integración, consentimiento y riesgo.</div>
+</div>
+<div class="channel-lens reveal">
+<div aria-label="Seleccionar canal" class="channel-tabs" role="tablist">
+<button class="channel-tab active" role="tab" aria-selected="true" data-channel="voice"><svg class="icon"><use href="#i-phone"></use></svg> Voz</button>
+<button class="channel-tab" role="tab" aria-selected="false" data-channel="whatsapp"><svg class="icon"><use href="#i-message"></use></svg> WhatsApp</button>
+<button class="channel-tab" role="tab" aria-selected="false" data-channel="ai"><svg class="icon"><use href="#i-bot"></use></svg> IA agéntica</button>
+<button class="channel-tab" role="tab" aria-selected="false" data-channel="web"><svg class="icon"><use href="#i-web"></use></svg> Web</button>
+<button class="channel-tab" role="tab" aria-selected="false" data-channel="email"><svg class="icon"><use href="#i-mail"></use></svg> Email / SMS</button>
+<button class="channel-tab" role="tab" aria-selected="false" data-channel="journey"><svg class="icon"><use href="#i-route"></use></svg> Journey</button>
+</div>
+<div class="channel-detail" id="channelDetail" role="tabpanel" aria-live="polite">
+<div class="detail-top"><div><div class="eyebrow" id="detailEyebrow">Análisis por canal</div><h3 id="detailTitle">Voz: señal operativa, hipótesis y capacidad</h3></div><div class="detail-icon" id="detailIcon"><svg class="icon icon-lg"><use href="#i-phone"></use></svg></div></div>
+<div class="detail-grid">
+<div class="detail-block"><span>RapidAuto · situación observada</span><h4 id="rapidChannelTitle">Especialización operativa</h4><p id="rapidChannelText">Líneas, colas e IVR diferenciados para servicio, cobranza y carteras; el volumen saliente domina la operación.</p></div>
+<div class="detail-block"><span id="competitorLabel">ClikAuto</span><h4 id="competitorChannelTitle">Voz como apoyo</h4><p id="competitorChannelText">El teléfono apoya un journey en el que el cliente ya encontró, configuró y preaprobó desde el canal digital.</p></div>
+<div class="detail-block target"><span>Capacidad de IA a evaluar</span><h4 id="aiChannelTitle">Motor de contactabilidad y Copilot</h4><p id="aiChannelText">Elegir mejor momento, canal y lista; transcribir, detectar motivo, asistir al agente, resumir y registrar el resultado automáticamente.</p></div>
+</div>
+<div class="detail-kpi" id="detailKpi" style="margin-top:14px; width:fit-content;">KPI: live voice, right-party contact, ACW y promesa cumplida</div><div class="detail-source" id="detailSource">Fuentes del módulo: <a aria-label="Ver referencia (RapidAuto, s. f.; RapidAuto, 2026a, 2026b)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.; RapidAuto, 2026a, 2026b)</a>; <a aria-label="Ver referencia (Genesys, s. f.-a–j)" class="apa-citation" href="#ref-genesys-copilot">(Genesys, s. f.-a–j)</a>; y la referencia oficial del competidor seleccionado.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-ink" id="ia">
+<div class="container">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow">Madurez y decisiones de IA</div>
+<h2>La prioridad es avanzar de observabilidad a asistencia, automatización y <span class="accent">orquestación con controles.</span></h2>
+</div>
+<p class="section-copy">El consumo histórico de Speech &amp; Text Analytics no debe interpretarse como adopción actual. Se originó por permisos heredados que comenzaron a generar consumo tras un cambio de tarifación; dichos permisos ya fueron revocados y hoy el cliente no tiene acceso a transcripciones. El siguiente paso es seleccionar capacidades de IA sobre problemas con evidencia, datos disponibles, acciones integrables y una métrica de negocio verificable. <a aria-label="Ver referencia (RapidAuto, 2026b)" class="apa-citation" href="#ref-internal-billing">(RapidAuto, 2026b)</a></p>
+</div>
+<div class="ai-grid reveal">
+<div class="token-card">
+<h3>Lectura correcta del consumo de AI Experience</h3>
+<p>Snapshot de facturación del 29 de julio al 28 de agosto de 2026. El consumo de STA fue histórico y no representa uso actual.</p>
+<div class="donut-wrap"><div class="donut"><div class="donut-center"><strong>250</strong><span>tokens incluidos</span></div></div></div>
+<div class="token-legend">
+<div class="legend-row"><span class="legend-swatch"></span><span>Speech &amp; Text Analytics · consumo histórico por permisos heredados</span><b>150</b></div>
+<div class="legend-row"><span class="legend-swatch orange"></span><span>Bot Flow Digital</span><b>5</b></div>
+<div class="legend-row"><span class="legend-swatch gray"></span><span>Resto disponible / sin consumo observado</span><b>95</b></div>
+</div>
+<div class="source-note"><span class="evidence-type evidence-internal">Dato interno + aclaración operativa</span><br/>Fuente: <a aria-label="Ver referencia (RapidAuto, 2026b)" class="apa-citation" href="#ref-internal-billing">(RapidAuto, 2026b)</a>. Los 150 tokens de STA se generaron por permisos heredados cuando la capacidad no generaba cobro; tras el cambio de tarifación comenzaron a reflejar consumo. Esos permisos ya fueron revocados y el cliente actualmente no tiene acceso a transcripciones. La categoría “resto disponible” es solo una resta descriptiva.</div></div>
+<div class="activation-card">
+<h3>Modelo de madurez propuesto</h3>
+<p>Cada nivel requiere una condición de entrada, una métrica y un límite operativo. No se recomienda avanzar a autonomía agéntica mientras las acciones, fuentes de datos y reglas de escalamiento no estén definidas.</p>
+<div class="ai-ladder">
+<div class="ladder-step active"><div class="ladder-number">1</div><span>Situación actual</span><h4>Observar</h4><p>STA está deshabilitado actualmente. Si se reactiva en el futuro, permitiría transcripción, temas, sentimiento, tendencias y causas de contacto.</p><div class="source-note">Capacidad de referencia: <a aria-label="Ver referencia (Genesys, s. f.-d)" class="apa-citation" href="#ref-genesys-sta">(Genesys, s. f.-d)</a></div></div>
+<div class="ladder-step next"><div class="ladder-number">2</div><span>Piloto recomendado</span><h4>Asistir</h4><p>AI Summary, Agent Copilot, knowledge y conclusión sugerida.</p><div class="source-note">Capacidad de referencia: <a aria-label="Ver referencia (Genesys, s. f.-a, s. f.-g)" class="apa-citation" href="#ref-genesys-copilot">(Genesys, s. f.-a, s. f.-g)</a></div></div>
+<div class="ladder-step"><div class="ladder-number">3</div><span>Con integración</span><h4>Automatizar</h4><p>Virtual Agent, tareas, casos y transacciones determinísticas.</p><div class="source-note">Capacidad de referencia: <a aria-label="Ver referencia (Genesys, s. f.-c, s. f.-f, s. f.-j)" class="apa-citation" href="#ref-genesys-whatsapp">(Genesys, s. f.-c, s. f.-f, s. f.-j)</a></div></div>
+<div class="ladder-step"><div class="ladder-number">4</div><span>Etapa controlada</span><h4>Orquestar y actuar</h4><p>Predicción, next best action y agentes agénticos con guardrails.</p><div class="source-note">Capacidad de referencia: <a aria-label="Ver referencia (Genesys, s. f.-b, s. f.-e, s. f.-f, s. f.-h)" class="apa-citation" href="#ref-genesys-predictive">(Genesys, s. f.-b, s. f.-e, s. f.-f, s. f.-h)</a></div></div>
+</div>
+<div aria-label="Seleccionar journey de IA" class="usecase-tabs" role="group">
+<button class="usecase-btn active" aria-pressed="true" data-usecase="acquisition">Adquisición</button>
+<button class="usecase-btn" aria-pressed="false" data-usecase="documents">Documentación</button>
+<button class="usecase-btn" aria-pressed="false" data-usecase="collections">Cobranza</button>
+<button class="usecase-btn" aria-pressed="false" data-usecase="service">Postventa</button>
+</div>
+<div class="usecase-panel">
+<div class="usecase-state"><span>Situación observada</span><h4 id="usecaseCurrentTitle">Formulario o WhatsApp, seguido de asesor</h4><p id="usecaseCurrentText">El cliente expresa interés y la velocidad depende del primer contacto, la disponibilidad y la continuidad de la información.</p></div>
+<div class="usecase-arrow"><svg class="icon icon-lg"><use href="#i-arrow"></use></svg></div>
+<div class="usecase-state target"><span>Hipótesis de intervención</span><h4 id="usecaseTargetTitle">Conversación guiada + prioridad predictiva</h4><p id="usecaseTargetText">El sistema captura intención y datos mínimos, identifica riesgo de abandono y entrega contexto al recurso adecuado.</p></div>
+</div>
+<div class="criteria-strip">
+<div><span>Entrada mínima</span><strong>ID de cliente o solicitud y fuente de datos autorizada.</strong></div>
+<div><span>Control</span><strong>Confirmación, trazabilidad y escalamiento humano definidos.</strong></div>
+<div><span>Éxito</span><strong>Resultado de negocio, no únicamente contención o volumen.</strong></div>
+</div>
+<div class="source-note"><span class="evidence-type evidence-analysis">Modelo propuesto</span> La secuencia de madurez es elaboración propia; no representa un modelo oficial de Genesys.</div></div>
+</div>
+<div class="decision-heading reveal">
+<div><div class="eyebrow">Priorización consultiva</div><h3>Casos de uso ordenados por evidencia, viabilidad y control.</h3></div>
+<p>La prioridad propuesta es relativa. Debe confirmarse con volumen por intención, costo actual, disponibilidad de APIs, riesgo regulatorio y valor del resultado.</p>
+</div>
+<div class="plays-grid reveal">
+<article class="play-card">
+<div class="play-icon"><svg class="icon"><use href="#i-target"></use></svg></div>
+<div class="decision-meta"><span class="priority-chip">Prioridad 1</span><span class="feasibility-chip">Viabilidad alta</span></div>
+<h4>Optimización de contactabilidad</h4>
+<dl class="decision-list"><div><dt>Señal</dt><dd>2.1% de live voice en las campañas Power Dialer revisadas.</dd></div><div><dt>Capacidad</dt><dd>Segmentación, mejor horario/canal, supresión por respuesta o pago y pruebas champion–challenger.</dd></div><div><dt>Dependencia</dt><dd>Calidad de lista, consentimientos, outcomes confiables y eventos de pago.</dd></div></dl>
+<span class="metric">Right-party contact · intentos por resultado</span>
+<div class="source-note"><span class="evidence-type evidence-internal">Señal interna</span><br/><a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a> · Capacidades: <a aria-label="Ver referencia (Genesys, s. f.-b, s. f.-h)" class="apa-citation" href="#ref-genesys-predictive">(Genesys, s. f.-b, s. f.-h)</a></div></article>
+<article class="play-card">
+<div class="play-icon"><svg class="icon"><use href="#i-spark"></use></svg></div>
+<div class="decision-meta"><span class="priority-chip">Prioridad 1</span><span class="feasibility-chip">Viabilidad alta</span></div>
+<h4>Agent Copilot + Knowledge</h4>
+<dl class="decision-list"><div><dt>Señal</dt><dd>Múltiples colas, motivos y carteras requieren respuestas y pasos consistentes.</dd></div><div><dt>Capacidad</dt><dd>Conocimiento contextual, resumen, conclusión sugerida y siguiente acción durante la interacción.</dd></div><div><dt>Dependencia</dt><dd>Contenido gobernado, políticas vigentes y acceso seguro a sistemas de negocio.</dd></div></dl>
+<span class="metric">ACW · FCR · calidad · consistencia</span>
+<div class="source-note"><span class="evidence-type evidence-analysis">Capacidad oficial</span><br/><a aria-label="Ver referencia (Genesys, s. f.-a, s. f.-g)" class="apa-citation" href="#ref-genesys-copilot">(Genesys, s. f.-a, s. f.-g)</a></div></article>
+<article class="play-card">
+<div class="play-icon"><svg class="icon"><use href="#i-message"></use></svg></div>
+<div class="decision-meta"><span class="priority-chip medium">Prioridad 2</span><span class="feasibility-chip">Viabilidad media</span></div>
+<h4>WhatsApp transaccional autenticado</h4>
+<dl class="decision-list"><div><dt>Señal</dt><dd>Canal ya disponible y transferencias digitales a ACD observadas.</dd></div><div><dt>Capacidad</dt><dd>Estatus, referencia, reporte de pago, documentos, agenda y handoff con contexto.</dd></div><div><dt>Dependencia</dt><dd>Identidad, APIs, plantillas, manejo documental y paridad del conector BYO-BSP.</dd></div></dl>
+<span class="metric">Transacciones completas · reapertura · handoff</span>
+<div class="source-note"><span class="evidence-type evidence-internal">Canal existente</span><br/><a aria-label="Ver referencia (RapidAuto, 2026a, 2026b)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a, 2026b)</a> · <a aria-label="Ver referencia (Genesys, s. f.-c, s. f.-f)" class="apa-citation" href="#ref-genesys-whatsapp">(Genesys, s. f.-c, s. f.-f)</a></div></article>
+<article class="play-card">
+<div class="play-icon"><svg class="icon"><use href="#i-route"></use></svg></div>
+<div class="decision-meta"><span class="priority-chip medium">Prioridad 2</span><span class="feasibility-chip">Viabilidad media</span></div>
+<h4>Gestión del SLA de 72 horas</h4>
+<dl class="decision-list"><div><dt>Señal</dt><dd>La promesa de rapidez depende de etapas, documentos, responsables y tiempos fuera del contacto.</dd></div><div><dt>Capacidad</dt><dd>Case Management, Work Automation, alertas, propietario y timeline por solicitud.</dd></div><div><dt>Dependencia</dt><dd>ID único, hitos del proceso y eventos desde el sistema de crédito.</dd></div></dl>
+<span class="metric">% &lt; 72 h · tiempo detenido por etapa</span>
+<div class="source-note"><span class="evidence-type evidence-analysis">Caso propuesto</span><br/><a aria-label="Ver referencia (RapidAuto, s. f.)" class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a> · <a aria-label="Ver referencia (Genesys, s. f.-e, s. f.-j)" class="apa-citation" href="#ref-genesys-journey">(Genesys, s. f.-e, s. f.-j)</a></div></article>
+<article class="play-card">
+<div class="play-icon"><svg class="icon"><use href="#i-web"></use></svg></div>
+<div class="decision-meta"><span class="priority-chip controlled">Prioridad 3</span><span class="feasibility-chip">Validar señal</span></div>
+<h4>Engagement predictivo en web</h4>
+<dl class="decision-list"><div><dt>Señal</dt><dd>Existe tracking de comportamiento, pero no se observa intervención contextual pública.</dd></div><div><dt>Capacidad</dt><dd>Identificar abandono o visitas repetidas y activar ayuda antes de perder el lead.</dd></div><div><dt>Dependencia</dt><dd>Journey web instrumentado, consentimiento, eventos y definición de conversión.</dd></div></dl>
+<span class="metric">Completion rate · abandono · conversión</span>
+<div class="source-note"><span class="evidence-type evidence-hypothesis">Señal por validar</span><br/><a aria-label="Ver referencia (CX Safari — RapidAuto México, 2026)" class="apa-citation" href="#ref-internal-cx">(CX Safari — RapidAuto México, 2026)</a> · <a aria-label="Ver referencia (Genesys, s. f.-b)" class="apa-citation" href="#ref-genesys-predictive">(Genesys, s. f.-b)</a></div></article>
+<article class="play-card">
+<div class="play-icon"><svg class="icon"><use href="#i-bot"></use></svg></div>
+<div class="decision-meta"><span class="priority-chip controlled">Prioridad 3</span><span class="feasibility-chip">Despliegue controlado</span></div>
+<h4>Agentic Virtual Agent</h4>
+<dl class="decision-list"><div><dt>Señal</dt><dd>Kavak eleva el estándar conversacional; RapidAuto no registra consumo agéntico en el snapshot.</dd></div><div><dt>Capacidad</dt><dd>Consultar, crear tareas, actualizar casos y ejecutar transacciones acotadas.</dd></div><div><dt>Dependencia</dt><dd>Acciones determinísticas, límites de decisión, confirmación, auditoría y escalamiento.</dd></div></dl>
+<span class="metric">Transacción exitosa · precisión · escalamiento</span>
+<div class="source-note"><span class="evidence-type evidence-analysis">Despliegue controlado</span><br/><a aria-label="Ver referencia (RapidAuto, 2026b; WhatsApp Business, s. f.)" class="apa-citation" href="#ref-internal-billing">(RapidAuto, 2026b; WhatsApp Business, s. f.)</a> · <a aria-label="Ver referencia (Genesys, s. f.-f)" class="apa-citation" href="#ref-genesys-ava">(Genesys, s. f.-f)</a></div></article>
+</div>
+<div class="governance-panel reveal">
+<div class="governance-head"><div><div class="eyebrow">Gobierno de IA</div><h3>Guardrails mínimos para un contexto de financiamiento.</h3></div><p>La autonomía debe crecer solo cuando el riesgo de la acción, la calidad del dato y la capacidad de reversión estén controlados.</p></div><div class="governance-source">Marco de referencia: NIST AI RMF 1.0 —gobernar, mapear, medir y gestionar riesgos—, el perfil de IA generativa de NIST y los principios de IA responsable de Genesys. <a aria-label="Ver referencia (Autio et al., 2024; Genesys, s. f.-i; Tabassi, 2023)" class="apa-citation" href="#ref-autio">(Autio et al., 2024; Genesys, s. f.-i; Tabassi, 2023)</a></div>
+<div class="governance-grid">
+<article class="guardrail-card"><span class="guardrail-number">01</span><strong>Límite de decisión</strong><p>La IA no aprueba, rechaza ni modifica condiciones de crédito fuera de reglas y motores autorizados.</p></article>
+<article class="guardrail-card"><span class="guardrail-number">02</span><strong>Identidad y consentimiento</strong><p>Antes de revelar saldos, estatus o documentos, se debe validar identidad, propósito y permisos del canal.</p></article>
+<article class="guardrail-card"><span class="guardrail-number">03</span><strong>Acciones determinísticas</strong><p>Cada acción debe usar una API o regla definida, con entradas, respuestas, timeouts y manejo de errores conocidos.</p></article>
+<article class="guardrail-card"><span class="guardrail-number">04</span><strong>Confirmación y reversibilidad</strong><p>Las acciones sensibles requieren confirmación explícita y una ruta para corregir, cancelar o escalar.</p></article>
+<article class="guardrail-card"><span class="guardrail-number">05</span><strong>Auditoría y calidad</strong><p>Registrar intención, fuente, respuesta, acción, resultado y motivo de escalamiento para evaluación continua.</p></article>
+<article class="guardrail-card"><span class="guardrail-number">06</span><strong>Human-in-the-loop</strong><p>Quejas, excepciones, vulnerabilidad financiera y decisiones discrecionales deben transferirse con contexto completo.</p></article>
+</div>
+</div>
+<div class="validation-panel reveal">
+<h3>Validaciones necesarias antes del diseño detallado</h3>
+<p>Estas preguntas determinan qué casos pueden pilotearse de inmediato y cuáles dependen de integración, gobierno o rediseño de proceso.</p>
+<div class="validation-grid">
+<article class="validation-item"><span>01</span><strong>¿Qué identificador conecta voz, WhatsApp, formulario, crédito y pago?</strong></article>
+<article class="validation-item"><span>02</span><strong>¿Cuál es la fuente autoritativa para estatus, saldo, documentos y decisiones?</strong></article>
+<article class="validation-item"><span>03</span><strong>¿Qué acciones están disponibles por API y con qué latencia o restricciones?</strong></article>
+<article class="validation-item"><span>04</span><strong>¿Qué intenciones concentran volumen, recontacto, costo o pérdida de conversión?</strong></article>
+<article class="validation-item"><span>05</span><strong>¿Qué políticas exigen aprobación humana o impiden una respuesta automática?</strong></article>
+<article class="validation-item"><span>06</span><strong>¿Cómo se registra el resultado de negocio para medir causalidad y no solo actividad?</strong></article>
+</div>
+<div class="source-note"><span class="evidence-type evidence-analysis">Preguntas de discovery</span> Elaboración propia para validar identidad, fuente autoritativa, acciones, riesgo y medición causal.</div></div>
+</div>
+</section>
+<section class="section" id="roadmap">
+<div class="container">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow">Plan de validación y despliegue</div>
+<h2>Desplegar IA por decisiones de negocio, no por <span class="accent">funcionalidades aisladas.</span></h2>
+</div>
+<p class="section-copy">Cada fase debe cerrar con una línea base, un grupo de comparación, una métrica de resultado y un criterio explícito para continuar, ajustar o detener. El roadmap es elaboración propia y utiliza como marco las capacidades oficiales de Genesys y la gestión de riesgos de NIST.</p>
+</div>
+<div class="roadmap reveal">
+<div class="phase">
+<div class="phase-dot">01</div>
+<div class="phase-card"><span class="phase-time">0–30 días</span><h3>Base de medición</h3><ul><li>Separar RapidAutos, Home y compartidos.</li><li>Unificar ID de cliente, crédito y solicitud.</li><li>Normalizar colas, flujos y conclusiones.</li><li>Definir intents, outcomes y eventos.</li><li>Establecer la línea base de 72 h, recontacto y contactabilidad.</li></ul><div class="phase-gate"><b>Gate:</b> la interacción puede vincularse de forma confiable con un resultado de negocio.</div><div class="phase-outcome">Entregable: línea base y mapa de datos.</div><div class="source-note"><span class="evidence-type evidence-analysis">Elaboración propia</span><br/>Basada en hallazgos de <a aria-label="Ver referencia (RapidAuto, 2026a, 2026b)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a, 2026b)</a>.</div></div>
+</div>
+<div class="phase">
+<div class="phase-dot">02</div>
+<div class="phase-card"><span class="phase-time">31–90 días</span><h3>Pilotos de asistencia y contactabilidad</h3><ul><li>AI Summary y Agent Copilot en grupo controlado.</li><li>Knowledge para pagos, documentos y crédito.</li><li>Conclusión sugerida y tareas automáticas.</li><li>Experimentos outbound champion–challenger.</li><li>Métricas digitales de primera respuesta y resolución.</li></ul><div class="phase-gate"><b>Gate:</b> mejora estadísticamente defendible en calidad, ACW, contactabilidad o resultado.</div><div class="phase-outcome">Entregable: evidencia de valor y aprendizaje operativo.</div><div class="source-note"><span class="evidence-type evidence-analysis">Capacidades base</span><br/><a aria-label="Ver referencia (Genesys, s. f.-a, s. f.-d, s. f.-g)" class="apa-citation" href="#ref-genesys-copilot">(Genesys, s. f.-a, s. f.-d, s. f.-g)</a>.</div></div>
+</div>
+<div class="phase">
+<div class="phase-dot">03</div>
+<div class="phase-card"><span class="phase-time">91–180 días</span><h3>Automatización transaccional</h3><ul><li>WhatsApp autenticado para transacciones acotadas.</li><li>Case Management por solicitud.</li><li>Work Automation para documentos y SLA.</li><li>Integraciones y manejo de errores.</li><li>Handoff con contexto y monitoreo de reaperturas.</li></ul><div class="phase-gate"><b>Gate:</b> transacciones completas, trazables y seguras con escalamiento efectivo.</div><div class="phase-outcome">Entregable: journey automatizado de alcance controlado.</div><div class="source-note"><span class="evidence-type evidence-analysis">Capacidades base</span><br/><a aria-label="Ver referencia (Genesys, s. f.-c, s. f.-f, s. f.-j)" class="apa-citation" href="#ref-genesys-whatsapp">(Genesys, s. f.-c, s. f.-f, s. f.-j)</a>.</div></div>
+</div>
+<div class="phase">
+<div class="phase-dot">04</div>
+<div class="phase-card"><span class="phase-time">6–12 meses</span><h3>Orquestación agéntica controlada</h3><ul><li>Gestión integral del SLA de 72 horas.</li><li>Next best action por cliente y etapa.</li><li>Predictive Routing o Engagement donde exista señal.</li><li>Agentic VA sobre acciones autorizadas.</li><li>Closed-loop entre resultados, knowledge y journeys.</li></ul><div class="phase-gate"><b>Gate:</b> auditoría, riesgo, precisión y límites de autonomía dentro de umbrales acordados.</div><div class="phase-outcome">Entregable: modelo operativo de IA gobernada.</div><div class="source-note"><span class="evidence-type evidence-analysis">Capacidades y gobierno</span><br/><a aria-label="Ver referencia (Genesys, s. f.-b, s. f.-e, s. f.-f, s. f.-h, s. f.-i; Tabassi, 2023)" class="apa-citation" href="#ref-genesys-predictive">(Genesys, s. f.-b, s. f.-e, s. f.-f, s. f.-h, s. f.-i; Tabassi, 2023)</a>.</div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-dark" id="impacto">
+<div class="container">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow">Marco de valor</div>
+<h2>Cada caso de IA debe sostener una hipótesis cuantificada y una <span class="accent">métrica de resultado.</span></h2>
+</div>
+<p class="section-copy">El análisis de sensibilidad permite entender el orden de magnitud sin convertirlo en forecast. Para estimar valor financiero se requieren tasas de conversión, monto promedio, margen, costo operativo y atribución causal.</p>
+</div>
+<div class="impact-grid reveal">
+<div class="calculator">
+<h3>Análisis de sensibilidad</h3>
+<p>Base de cálculo: 64,342 intentos Power Dialer y 821 interacciones de mensaje entrante en julio. Los controles representan supuestos, no metas comprometidas. <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a></p>
+<div class="slider-group">
+<div class="slider-head"><label for="contactLift">Mejora hipotética en live voice</label><span class="slider-value" id="contactLiftValue">+1.0 pp</span></div>
+<input id="contactLift" max="5" min="0.5" step="0.5" type="range" value="1"/>
+</div>
+<div class="slider-group">
+<div class="slider-head"><label for="automationRate">Tasa hipotética de resolución digital</label><span class="slider-value" id="automationRateValue">30%</span></div>
+<input id="automationRate" max="60" min="10" step="5" type="range" value="30"/>
+</div>
+<div class="calc-results">
+<div class="calc-result"><span>Volumen incremental de live voice / mes</span><strong id="extraContacts">643</strong></div>
+<div class="calc-result"><span>Interacciones digitales bajo el supuesto de resolución</span><strong id="digitalResolved">246</strong></div>
+</div>
+<div class="calc-note">Para estimar ROI se requiere multiplicar por conversión a promesa, pago o aprobación, monto promedio, margen y costo por tratamiento. Las interacciones de mensaje no equivalen necesariamente a casos únicos.</div><div class="source-note"><span class="evidence-type evidence-analysis">Análisis de sensibilidad</span><br/>Fórmulas: 64,342 × mejora en puntos porcentuales; 821 × tasa hipotética de resolución. No es forecast ni ROI. Fuente de las bases: <a aria-label="Ver referencia (RapidAuto, 2026a)" class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a>.</div>
+</div>
+<div class="metric-tree">
+<h3>Métricas de decisión</h3>
+<div class="tree-root"><span>Métrica integradora</span><strong>% de solicitudes resueltas en menos de 72 horas sin repetir información</strong></div>
+<div class="tree-branches">
+<div class="tree-branch"><h4>Contactabilidad</h4><p>Live voice, right-party contact, intentos por contacto, mejor horario y canal.</p></div>
+<div class="tree-branch"><h4>Conversión</h4><p>Solicitud a aprobación, aprobación a contrato y tiempo hasta fondeo.</p></div>
+<div class="tree-branch"><h4>Resolución digital</h4><p>Contención, transacción completada, handoff con contexto y reapertura.</p></div>
+<div class="tree-branch"><h4>Eficiencia</h4><p>ACW, wrap-up timeout, transferencias, recontactos y costo por resultado.</p></div>
+<div class="tree-branch"><h4>Calidad</h4><p>Sentimiento, cumplimiento, respuesta correcta, documentación completa.</p></div>
+<div class="tree-branch"><h4>Cobranza</h4><p>Promesa de pago, promesa cumplida, recuperación y supresión oportuna.</p></div>
+</div>
+<div class="source-note"><span class="evidence-type evidence-analysis">Árbol de métricas propuesto</span> Requiere definición de outcomes, ventanas de atribución y baseline por journey.</div></div>
+</div>
+</div>
+</section>
+<section class="section section-white" id="fuentes">
+<div class="container">
+<div class="section-head single reveal">
+<div>
+<div class="eyebrow">Trazabilidad de evidencia</div>
+<h2>Referencias y criterios de evidencia en formato APA 7.ª edición.</h2>
+<p class="section-copy">Las citas autor-fecha dentro de la página enlazan a esta sección. Las referencias internas son documentos no publicados y solo sustentan los datos operativos de RapidAuto. Las fuentes públicas son principalmente first-party; por ello permiten verificar canales y capacidades comunicadas, pero no sustituyen auditoría independiente de desempeño.</p>
+</div>
+</div>
+<div class="reference-intro reveal">
+<div class="reference-summary-card"><strong>3</strong><span>documentos internos no publicados</span></div>
+<div class="reference-summary-card"><strong>9</strong><span>fuentes oficiales de competidores y RapidAuto</span></div>
+<div class="reference-summary-card"><strong>10</strong><span>páginas oficiales de capacidades Genesys</span></div>
+<div class="reference-summary-card"><strong>2</strong><span>marcos técnicos NIST para gobierno de IA</span></div>
+</div>
+<div class="reference-panel reveal">
+<h3>Lista de referencias</h3>
+<p>Lista única en orden alfabético, con sangría francesa, títulos en cursivas y URL/DOI de acuerdo con APA 7. Las páginas sin fecha incluyen fecha de recuperación porque su contenido puede cambiar. Los documentos internos no publicados se identifican expresamente y no cuentan con URL pública.</p>
+<div class="reference-toolbar">
+<button class="ref-copy-btn" id="copyRefsBtn" type="button">Copiar lista de referencias</button>
+<span class="ref-copy-status" id="copyRefsStatus" role="status" aria-live="polite"></span>
+</div>
+<div class="reference-list">
+<p class="reference-entry" id="ref-autio">Autio, C., Schwartz, R., Dunietz, J., Jain, S., Stanley, M., Tabassi, E., Hall, P., &amp; Roberts, K. (2024). <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</em> (NIST AI 600-1). National Institute of Standards and Technology. <a href="https://doi.org/10.6028/NIST.AI.600-1" rel="noopener" target="_blank">https://doi.org/10.6028/NIST.AI.600-1</a></p>
+<p class="reference-entry" id="ref-clik-home">ClikAuto. (s. f.-a). <em>Compra y venta de coches con garantía en ClikAuto</em>. Recuperado el 24 de agosto de 2026, de <a href="https://clikauto.com/" rel="noopener" target="_blank">https://clikauto.com/</a></p>
+<p class="reference-entry" id="ref-clik-credit">ClikAuto. (s. f.-b). <em>Crédito autos seminuevos: Crédito de 60 meses</em>. Recuperado el 24 de agosto de 2026, de <a href="https://clikauto.com/credito-autos-seminuevos" rel="noopener" target="_blank">https://clikauto.com/credito-autos-seminuevos</a></p>
+<p class="reference-entry" id="ref-internal-cx"><em>CX Safari — RapidAuto México.</em> (2026). [Documento de trabajo no publicado].</p>
+<p class="reference-entry" id="ref-genesys-copilot">Genesys. (s. f.-a). <em>AI Copilot agents for customer service</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/copilots" rel="noopener" target="_blank">https://www.genesys.com/capabilities/copilots</a></p>
+<p class="reference-entry" id="ref-genesys-predictive">Genesys. (s. f.-b). <em>AI predictive engagement solutions</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/predictive-web-engagement" rel="noopener" target="_blank">https://www.genesys.com/capabilities/predictive-web-engagement</a></p>
+<p class="reference-entry" id="ref-genesys-whatsapp">Genesys. (s. f.-c). <em>Artificial intelligence (AI) customer service: WhatsApp business integration on Genesys Cloud</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/whatsapp" rel="noopener" target="_blank">https://www.genesys.com/capabilities/whatsapp</a></p>
+<p class="reference-entry" id="ref-genesys-sta">Genesys. (s. f.-d). <em>Conversational intelligence: Speech and text analytics</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/speech-and-text-analytics" rel="noopener" target="_blank">https://www.genesys.com/capabilities/speech-and-text-analytics</a></p>
+<p class="reference-entry" id="ref-genesys-journey">Genesys. (s. f.-e). <em>Customer journey management capabilities</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/customer-journey-management" rel="noopener" target="_blank">https://www.genesys.com/capabilities/customer-journey-management</a></p>
+<p class="reference-entry" id="ref-genesys-ava">Genesys. (s. f.-f). <em>Genesys Cloud Agentic Virtual Agent</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/virtual-agents" rel="noopener" target="_blank">https://www.genesys.com/capabilities/virtual-agents</a></p>
+<p class="reference-entry" id="ref-genesys-knowledge">Genesys. (s. f.-g). <em>Knowledge management</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/knowledge-management" rel="noopener" target="_blank">https://www.genesys.com/capabilities/knowledge-management</a></p>
+<p class="reference-entry" id="ref-genesys-routing">Genesys. (s. f.-h). <em>Predictive and automated routing capabilities</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/automated-routing" rel="noopener" target="_blank">https://www.genesys.com/capabilities/automated-routing</a></p>
+<p class="reference-entry" id="ref-genesys-responsible">Genesys. (s. f.-i). <em>Responsible AI</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/responsible-ai" rel="noopener" target="_blank">https://www.genesys.com/responsible-ai</a></p>
+<p class="reference-entry" id="ref-genesys-work">Genesys. (s. f.-j). <em>Task routing and workforce automation capabilities</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.genesys.com/capabilities/work-automation-and-task-routing" rel="noopener" target="_blank">https://www.genesys.com/capabilities/work-automation-and-task-routing</a></p>
+<p class="reference-entry" id="ref-kavak-contact">Kavak. (s. f.-a). <em>Contacto</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.kavak.com/mx/contacto" rel="noopener" target="_blank">https://www.kavak.com/mx/contacto</a></p>
+<p class="reference-entry" id="ref-kavak-kopi">Kavak. (s. f.-b). <em>Kopi, asistente virtual</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.kavak.com/mx/kopi" rel="noopener" target="_blank">https://www.kavak.com/mx/kopi</a></p>
+<p class="reference-entry" id="ref-kavak-app">Kavak. (2026a, 4 de mayo). <em>¿Cómo ingreso a la aplicación?</em> <a href="https://www.kavak.com/mx/preguntas-frecuentes/app-kavak/funcionalidades/que-puedo-realizar-desde-la-app-kavak" rel="noopener" target="_blank">https://www.kavak.com/mx/preguntas-frecuentes/app-kavak/funcionalidades/que-puedo-realizar-desde-la-app-kavak</a></p>
+<p class="reference-entry" id="ref-kavak-ai-blog">Kavak. (2026b, 18 de agosto). <em>Kavak corre entre 100,000 y 200,000 agentes de IA al día: Así rediseñaron la empresa desde cero</em>. <a href="https://www.kavak.com/mx/blog/kavak-empresa-ai-native-2026" rel="noopener" target="_blank">https://www.kavak.com/mx/blog/kavak-empresa-ai-native-2026</a></p>
+<p class="reference-entry" id="ref-nissan">Nissan México. (s. f.). <em>CREDI NISSAN para todo</em>. Recuperado el 24 de agosto de 2026, de <a href="https://www.nissan.com.mx/credi-nissan/credi-nissan-para-todo.html" rel="noopener" target="_blank">https://www.nissan.com.mx/credi-nissan/credi-nissan-para-todo.html</a></p>
+<p class="reference-entry" id="ref-rapidauto-web">RapidAuto. (s. f.). <em>RapidAuto</em>. Recuperado el 24 de agosto de 2026, de <a href="https://rapidauto.com.mx/" rel="noopener" target="_blank">https://rapidauto.com.mx/</a></p>
+<p class="reference-entry" id="ref-internal-interactions">RapidAuto. (2026a). <em>Informe de interacciones de julio de 2026</em> [Informe interno no publicado].</p>
+<p class="reference-entry" id="ref-internal-billing">RapidAuto. (2026b). <em>Resumen de facturación y uso de Genesys Cloud: 29 de julio–28 de agosto de 2026</em> [Informe interno no publicado].</p>
+<p class="reference-entry" id="ref-tabassi">Tabassi, E. (2023). <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em> (NIST AI 100-1). National Institute of Standards and Technology. <a href="https://doi.org/10.6028/NIST.AI.100-1" rel="noopener" target="_blank">https://doi.org/10.6028/NIST.AI.100-1</a></p>
+<p class="reference-entry" id="ref-whatsapp-kavak">WhatsApp Business. (s. f.). <em>Kavak: Kavak llegó a los clientes en el primer momento de interés con la plataforma de Meta Business Agent en WhatsApp</em>. Recuperado el 24 de agosto de 2026, de <a href="https://whatsappbusiness.com/es-la/resources/success-stories/kavak/" rel="noopener" target="_blank">https://whatsappbusiness.com/es-la/resources/success-stories/kavak/</a></p>
+</div>
+<div class="reference-note"><strong>Nota de rigor:</strong> Los sitios de RapidAuto, competidores, WhatsApp Business y Genesys son fuentes corporativas de primera parte. Sustentan la existencia y descripción pública de canales o capacidades, pero no validan de manera independiente resultados comerciales, calidad operativa, arquitectura completa ni madurez interna. Las cifras de Kavak publicadas por la propia empresa se identifican como autorreporte.</div>
+</div>
+</div>
+</section>
+<section class="closing">
+<div class="container">
+<div class="closing-grid reveal">
+<div>
+<div class="eyebrow">Conclusión del diagnóstico</div>
+<h2>La decisión principal es qué problema resolver primero con IA y qué condiciones deben existir para escalar.</h2>
+<p>La evidencia disponible favorece comenzar por contactabilidad y asistencia al agente, donde las dependencias son menores y la medición puede ser más directa. WhatsApp transaccional y gestión del SLA de 72 horas requieren identidad, APIs y eventos de negocio. La autonomía agéntica debe incorporarse después de definir límites, confirmaciones, auditoría y escalamiento humano. <a aria-label="Ver referencia (Genesys, s. f.-a, s. f.-c, s. f.-f, s. f.-i; Tabassi, 2023)" class="apa-citation" href="#ref-genesys-copilot">(Genesys, s. f.-a, s. f.-c, s. f.-f, s. f.-i; Tabassi, 2023)</a></p>
+</div>
+<div class="closing-card"><span>Secuencia recomendada</span><strong>1. Conectar interacción y resultado. 2. Asistir decisiones humanas. 3. Automatizar transacciones acotadas. 4. Escalar autonomía con controles.</strong><div class="source-note"><span class="evidence-type evidence-analysis">Secuencia propuesta</span> Elaboración propia con base en dependencias, evidencia operativa y marcos de gobierno citados.</div></div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-wrap">
+<span>Diagnóstico consultivo de CX e IA | RapidAuto | Versión sustentada con APA 7 · 24 de agosto de 2026</span>
+<span class="genesys-lockup"><img src="genesys_logo.png" alt="Genesys" class="genesys-logo footer-logo"/> Genesys Cloud CX · IA aplicada y gobernada</span>
+</div>
+</footer>
+<script>
+    const rapidAuto = {
+      score: 2.5,
+      dims: [4.2, 2.4, 2.2, 2.3, 1.8, 2.8, 2.1]
+    };
+
+    const dimensions = [
+      "Accesibilidad",
+      "Autoservicio digital",
+      "Control transaccional",
+      "Continuidad",
+      "Personalización",
+      "Ecosistema",
+      "IA conversacional"
+    ];
+
+    const companies = {
+      clikauto: {
+        name: "ClikAuto",
+        mark: "CA",
+        score: 3.7,
+        dims: [4.2, 4.4, 4.3, 3.7, 3.5, 3.4, 2.6],
+        territory: "Configuración, preaprobación y avance digital desde el celular.",
+        source: 'Fuente: <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a, s. f.-b)</a>',
+        callout: '<strong>Lectura comparativa:</strong> ClikAuto ofrece mayor control visible sobre configuración, preaprobación y contrato digital. La brecha debe evaluarse con conversión y esfuerzo real del cliente. <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a>'
+      },
+      kavak: {
+        name: "Kavak",
+        mark: "K",
+        score: 4.8,
+        dims: [4.9, 4.8, 4.8, 4.7, 4.5, 5.0, 4.7],
+        territory: "Journey integrado con WhatsApp 24/7, cuenta/app y agentes de IA documentados públicamente.",
+        source: 'Fuentes: <a class="apa-citation" href="#ref-kavak-contact">(Kavak, s. f.-a, s. f.-b)</a>; <a class="apa-citation" href="#ref-whatsapp-kavak">(WhatsApp Business, s. f.)</a>',
+        callout: '<strong>Lectura comparativa:</strong> Kavak eleva el estándar de disponibilidad, contexto y ejecución. WhatsApp Business documenta agentes de IA a lo largo del journey y handoff con contexto; los detalles completos del stack y los resultados independientes no son públicos. <a class="apa-citation" href="#ref-whatsapp-kavak">(WhatsApp Business, s. f.)</a>'
+      },
+      nissan: {
+        name: "Credi Nissan",
+        mark: "N",
+        score: 3.9,
+        dims: [4.6, 3.8, 3.9, 4.0, 3.6, 4.6, 2.8],
+        territory: "Continuidad apoyada por marca, financiera, login y red de distribuidores.",
+        source: 'Fuente: <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>',
+        callout: '<strong>Lectura comparativa:</strong> Credi Nissan combina soluciones financieras, cotizador, ayuda, login, línea 800, WhatsApp y red autorizada. La comparación no mide calidad interna ni conversión. <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>'
+      },
+      bbva: {
+        name: "BBVA Automarket",
+        mark: "BBVA",
+        score: 3.6,
+        dims: [4.0, 4.2, 3.5, 3.4, 4.3, 3.2, 3.0],
+        territory: "Experiencia web con Predictive Engagement, chatbot, formulario y correo; sin WhatsApp ni voz observados.",
+        source: 'Hallazgos de revisión directa compartidos para este diagnóstico.',
+        callout: '<strong>Lectura comparativa:</strong> BBVA Automarket destaca por engagement predictivo y entrada digital asistida, pero su mix observado carece de WhatsApp y voz; la oportunidad está en conectar mejor señales web, bot, formulario y correo con outcomes de negocio.'
+      }
+    };
+
+    const channelData = {
+      voice: {
+        title: "Voz: señal operativa, hipótesis y capacidad",
+        icon: "i-phone",
+        rapidTitle: "Especialización operativa",
+        rapidText: 'Líneas, colas e IVR diferenciados para servicio, cobranza y carteras; el volumen saliente domina la operación. <a class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a>',
+        aiTitle: "Optimización de contactabilidad y asistencia",
+        aiText: 'Evaluar mejor horario, canal y lista; transcribir, detectar motivo, asistir al agente y registrar el resultado. <a class="apa-citation" href="#ref-genesys-sta">(Genesys, s. f.-a, s. f.-d, s. f.-h)</a>',
+        kpi: "KPI propuesto: live voice, right-party contact, ACW y promesa cumplida",
+        competitors: {
+          clikauto: ["Voz como apoyo", 'El teléfono complementa un journey con preaprobación móvil y contrato digital. <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a>'],
+          kavak: ["WhatsApp prioritario + teléfono", 'La página de contacto prioriza WhatsApp 24/7; la FAQ de la app también publica teléfono. <a class="apa-citation" href="#ref-kavak-contact">(Kavak, 2026a; Kavak, s. f.-a)</a>'],
+          nissan: ["Línea 800 + red", 'La atención se apoya en la financiera y distribuidores autorizados. <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>'],
+          bbva: ["Sin canal de voz observado", 'La revisión compartida no identificó canal de voz en BBVA Automarket.']
+        }
+      },
+      whatsapp: {
+        title: "WhatsApp: profundidad transaccional y continuidad",
+        icon: "i-message",
+        rapidTitle: "Servicio y cobranza segmentados",
+        rapidText: 'Dos números publicados, conector BYO-BSP y transferencias a ACD observadas. Debe medirse resolución real, no solo duración. <a class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.; RapidAuto, 2026a, 2026b)</a>',
+        aiTitle: "Autoservicio autenticado a evaluar",
+        aiText: 'Consultar estatus, generar referencias, recibir documentos y transferir con historial. <a class="apa-citation" href="#ref-genesys-whatsapp">(Genesys, s. f.-c, s. f.-f)</a>',
+        kpi: "KPI propuesto: primera respuesta, transacción completada, handoff contextual y reapertura",
+        competitors: {
+          clikauto: ["CTA comercial visible", 'WhatsApp acompaña dudas de compra y crédito después de que el cliente explora opciones en web. <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a, s. f.-b)</a>'],
+          kavak: ["WhatsApp 24/7 + IA", 'Kavak publica ~5 minutos de respuesta y WhatsApp Business documenta personalización y handoff con contexto a agentes de IA. <a class="apa-citation" href="#ref-whatsapp-kavak">(Kavak, s. f.-a; WhatsApp Business, s. f.)</a>'],
+          nissan: ["Contacto corporativo", 'WhatsApp forma parte del menú oficial junto con la línea 800. <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>'],
+          bbva: ["Sin WhatsApp observado", 'La revisión compartida no identificó WhatsApp como canal en BBVA Automarket.']
+        }
+      },
+      ai: {
+        title: "IA conversacional: evidencia, acciones y límites",
+        icon: "i-bot",
+        rapidTitle: "STA deshabilitado; adopción de IA por validar",
+        rapidText: 'El snapshot muestra 150 tokens de Speech &amp; Text Analytics por permisos heredados y 5 en Bot Flow Digital. Los permisos de STA ya fueron revocados y el cliente no tiene acceso actual a transcripciones; tampoco hay consumo de Agentic VA, Virtual Agent, Copilot Action o Predictive Routing. <a class="apa-citation" href="#ref-internal-billing">(RapidAuto, 2026b)</a>',
+        aiTitle: "Agentic VA con acciones controladas",
+        aiText: 'Autenticar, consultar sistemas, actualizar casos y ejecutar workflows aprobados con auditoría y handoff. <a class="apa-citation" href="#ref-genesys-ava">(Genesys, s. f.-f, s. f.-i; Tabassi, 2023)</a>',
+        kpi: "KPI propuesto: transacción exitosa, precisión, escalamiento y costo por resultado",
+        competitors: {
+          clikauto: ["IA no observada públicamente", 'El journey digital está confirmado, pero las páginas revisadas no identifican un agente agéntico. <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a, s. f.-b)</a>'],
+          kavak: ["Evidencia agéntica pública", 'WhatsApp Business documenta agentes de IA desde 2023 a lo largo del journey y Kavak publica a Kopi como asistente virtual. <a class="apa-citation" href="#ref-whatsapp-kavak">(Kavak, s. f.-b; WhatsApp Business, s. f.)</a>'],
+          nissan: ["IA no observada públicamente", 'WhatsApp, login y red están confirmados, pero la página revisada no identifica un agente agéntico. <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>'],
+          bbva: ["Chatbot + Predictive Engagement", 'La revisión compartida identifica chatbot y capacidades de Predictive Engagement; no se observó IA agéntica.']
+        }
+      },
+      web: {
+        title: "Web: señales de abandono e intervención",
+        icon: "i-web",
+        rapidTitle: "FAQ + trámite digital + asesor",
+        rapidText: 'La experiencia pública explica requisitos y promete rapidez, pero el control detallado del avance no es visible. <a class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a>',
+        aiTitle: "Intervención predictiva a validar",
+        aiText: 'Detectar abandono o visitas repetidas y activar ayuda contextual. <a class="apa-citation" href="#ref-genesys-predictive">(Genesys, s. f.-b)</a>',
+        kpi: "KPI propuesto: completion rate, abandono, tiempo a primer contacto y conversión",
+        competitors: {
+          clikauto: ["Configuración y preaprobación", 'El cliente encuentra un auto, configura la compra, solicita preaprobación y firma digitalmente. <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a>'],
+          kavak: ["Journey integral", 'Cuenta/app, catálogo, financiamiento y Kopi forman parte del ecosistema público. <a class="apa-citation" href="#ref-kavak-kopi">(Kavak, 2026a; Kavak, s. f.-b)</a>'],
+          nissan: ["Cotizador y distribuidor", 'El journey conecta soluciones financieras, login, ayuda y red autorizada. <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>'],
+          bbva: ["Predictive Engagement + chatbot", 'El sitio combina señales de comportamiento, chatbot y formulario para captar y asistir intención.']
+        }
+      },
+      email: {
+        title: "Email y SMS: secuencia y supresión por evento",
+        icon: "i-mail",
+        rapidTitle: "Email no utilizado en Genesys",
+        rapidText: 'No hay dominios ni colas de email configurados en Genesys. El cliente no utiliza correo como canal dentro de la plataforma.',
+        aiTitle: "Clasificación, supresión y selección de canal",
+        aiText: 'Clasificar motivo, crear caso o tarea y detener la secuencia cuando exista respuesta o pago. <a class="apa-citation" href="#ref-genesys-work">(Genesys, s. f.-a, s. f.-j)</a>',
+        kpi: "KPI propuesto: entrega, respuesta, conversión, supresión y costo por resultado",
+        competitors: {
+          clikauto: ["Email general + journey web", 'El correo funciona como soporte mientras el avance principal sucede en web. <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a>'],
+          kavak: ["Cuenta, app y WhatsApp", 'La operación interna de outbound no es pública; sí existe continuidad mediante cuenta/app y canales de atención. <a class="apa-citation" href="#ref-kavak-app">(Kavak, 2026a; Kavak, s. f.-a)</a>'],
+          nissan: ["Ecosistema de contacto", 'La financiera, productos, línea 800, WhatsApp y distribuidores ofrecen continuidad. <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>'],
+          bbva: ["Email + formulario", 'La revisión compartida identifica correo electrónico y formulario web como puntos de contacto.']
+        }
+      },
+      journey: {
+        title: "Journey: identidad, etapas y trazabilidad",
+        icon: "i-route",
+        rapidTitle: "Acceso amplio, continuidad por validar",
+        rapidText: 'Teléfono, WhatsApp y formulario facilitan el contacto, pero no es visible si el contexto viaja entre etapas. Email no está habilitado en Genesys. <a class="apa-citation" href="#ref-internal-cx">(CX Safari — RapidAuto México, 2026; RapidAuto, s. f.)</a>',
+        aiTitle: "Gestión del SLA de 72 horas",
+        aiText: 'Un ID de solicitud, etapas, responsable, documentos, SLA, alertas y timeline compartido. <a class="apa-citation" href="#ref-genesys-journey">(Genesys, s. f.-e, s. f.-j)</a>',
+        kpi: "KPI propuesto: % < 72 h, contactos por solicitud y tiempo detenido por etapa",
+        competitors: {
+          clikauto: ["Más control digital", 'La configuración, preaprobación y contrato reducen pasos que dependen de un contacto separado. <a class="apa-citation" href="#ref-clik-home">(ClikAuto, s. f.-a)</a>'],
+          kavak: ["Contexto end-to-end", 'WhatsApp Business documenta transferencia con preferencias y respuestas previas hacia agentes de IA de Kavak. <a class="apa-citation" href="#ref-whatsapp-kavak">(WhatsApp Business, s. f.)</a>'],
+          nissan: ["Continuidad de marca", 'Financiera, dealer, login, productos y postventa generan una red de soporte. <a class="apa-citation" href="#ref-nissan">(Nissan México, s. f.)</a>'],
+          bbva: ["Continuidad digital por validar", 'Web, chatbot, formulario y email están presentes; queda por validar cuánto contexto comparten entre sí.']
+        }
+      }
+    };
+
+    const usecases = {
+      acquisition: {
+        currentTitle: "Formulario o WhatsApp, seguido de asesor",
+        currentText: 'El cliente expresa interés y la velocidad depende del primer contacto, disponibilidad y continuidad de la información. <a class="apa-citation" href="#ref-rapidauto-web">(RapidAuto, s. f.)</a>',
+        targetTitle: "Conversación guiada y prioridad basada en señal",
+        targetText: 'El sistema captura intención y datos mínimos, identifica riesgo de abandono y entrega contexto al asesor. <span class="claim-status analysis">Hipótesis</span>'
+      },
+      documents: {
+        currentTitle: "Seguimiento manual de documentos",
+        currentText: 'El avance puede depender de mensajes, llamadas y validaciones separadas; los faltantes generan recontacto y espera. <a class="apa-citation" href="#ref-internal-cx">(CX Safari — RapidAuto México, 2026)</a>',
+        targetTitle: "Checklist dinámico y tareas por SLA",
+        targetText: 'El asistente indica el faltante exacto, recibe archivos y crea trabajo priorizado por SLA. <span class="claim-status analysis">Hipótesis</span>'
+      },
+      collections: {
+        currentTitle: "Alta intensidad de intentos",
+        currentText: 'La operación usa Power Dialer y mensajería saliente; 75.4% de los intentos Power Dialer revisados terminó en no answer o machine. <a class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a>',
+        targetTitle: "Contactabilidad por evento y propensión",
+        targetText: 'La IA selecciona canal/horario, usa eventos de respuesta o pago y reduce intentos redundantes. <span class="claim-status analysis">Hipótesis</span>'
+      },
+      service: {
+        currentTitle: "Atención por motivo y cola",
+        currentText: 'Saldos, facturas, documentos, seguros y postventa se distribuyen en colas y canales especializados. <a class="apa-citation" href="#ref-internal-interactions">(RapidAuto, 2026a)</a>',
+        targetTitle: "Autoservicio, Copilot y caso único",
+        targetText: 'El cliente resuelve consultas simples; el agente recibe contexto y el seguimiento permanece en un caso. <span class="claim-status analysis">Hipótesis</span>'
+      }
+    };
+
+    let selectedCompany = "clikauto";
+    let selectedChannel = "voice";
+
+    /* Escrituras defensivas: si un nodo no existe, la página no se rompe */
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+    function setHTML(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = value;
+    }
+
+    function polarPoint(cx, cy, radius, angle) {
+      return [cx + radius * Math.cos(angle), cy + radius * Math.sin(angle)];
+    }
+
+    function drawRadar() {
+      const svg = document.getElementById("radarChart");
+      const company = companies[selectedCompany];
+      const cx = 280, cy = 215, maxR = 145, axes = dimensions.length;
+      let html = "";
+
+      for (let level = 1; level <= 5; level++) {
+        const r = maxR * level / 5;
+        const pts = [];
+        for (let i = 0; i < axes; i++) {
+          const angle = -Math.PI / 2 + i * Math.PI * 2 / axes;
+          pts.push(polarPoint(cx, cy, r, angle).join(","));
+        }
+        html += `<polygon points="${pts.join(" ")}" fill="${level % 2 ? "rgba(255,255,255,0.012)" : "rgba(255,255,255,0.022)"}" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>`;
+      }
+
+      for (let i = 0; i < axes; i++) {
+        const angle = -Math.PI / 2 + i * Math.PI * 2 / axes;
+        const p = polarPoint(cx, cy, maxR, angle);
+        const labelP = polarPoint(cx, cy, maxR + 41, angle);
+        const anchor = labelP[0] < cx - 8 ? "end" : labelP[0] > cx + 8 ? "start" : "middle";
+        html += `<line x1="${cx}" y1="${cy}" x2="${p[0]}" y2="${p[1]}" stroke="rgba(255,255,255,0.11)"/>`;
+        html += `<text x="${labelP[0]}" y="${labelP[1]}" text-anchor="${anchor}" dominant-baseline="middle" fill="#B9B5CC" font-size="11" font-family="Roboto,Arial,sans-serif">${dimensions[i]}</text>`;
+      }
+
+      function polygonFor(values, fill, stroke) {
+        const pts = values.map((v, i) => {
+          const angle = -Math.PI / 2 + i * Math.PI * 2 / axes;
+          return polarPoint(cx, cy, maxR * v / 5, angle).join(",");
+        });
+        let layer = `<polygon points="${pts.join(" ")}" fill="${fill}" stroke="${stroke}" stroke-width="2.5"/>`;
+        pts.forEach(p => {
+          const [x, y] = p.split(",");
+          layer += `<circle cx="${x}" cy="${y}" r="3.6" fill="${stroke}" stroke="#211A3A" stroke-width="1.5"/>`;
+        });
+        return layer;
+      }
+
+      html += polygonFor(rapidAuto.dims, "rgba(155,145,255,0.14)", "#9B91FF");
+      html += polygonFor(company.dims, "rgba(255,79,31,0.12)", "#FF7047");
+      html += `<g transform="translate(175,405)"><circle cx="0" cy="0" r="4" fill="#9B91FF"/><text x="10" y="4" fill="#D0CCDD" font-size="10" font-family="Roboto,Arial,sans-serif">RapidAuto</text><circle cx="100" cy="0" r="4" fill="#FF7047"/><text x="110" y="4" fill="#D0CCDD" font-size="10" font-family="Roboto,Arial,sans-serif">${company.name}</text></g>`;
+      /* La descripción accesible se regenera dentro del SVG,
+         porque innerHTML reemplaza todos los nodos hijos. */
+      const summary = "Comparativo de madurez observable, escala 1 a 5. RapidAuto: " +
+        dimensions.map((d, i) => `${d} ${rapidAuto.dims[i].toFixed(1)}`).join("; ") +
+        `. ${company.name}: ` +
+        dimensions.map((d, i) => `${d} ${company.dims[i].toFixed(1)}`).join("; ") + ".";
+      svg.innerHTML = `<desc id="radarDesc">${summary}</desc>` + html;
+      svg.setAttribute("aria-label", summary);
+    }
+
+    function updateCompany() {
+      const c = companies[selectedCompany];
+      if (!c) return;
+      setText("companyName", c.name);
+      setText("companyMark", c.mark);
+      setText("companyScore", c.score.toFixed(1));
+      setText("companyTerritory", c.territory);
+      setHTML("companySource", c.source);
+      setHTML("benchmarkCallout", c.callout);
+      setText("selectedScoreChip", `${c.name} ${c.score.toFixed(1)}`);
+      setHTML("dimensionList", dimensions.map((d, i) => `
+        <div class="dimension-row">
+          <span>${d}</span>
+          <div class="bar-track"><div class="bar-fill" style="width:${c.dims[i] * 20}%"></div></div>
+          <b>${c.dims[i].toFixed(1)}</b>
+        </div>`).join(""));
+      drawRadar();
+      updateChannelDetail();
+    }
+
+    function updateChannelDetail() {
+      const d = channelData[selectedChannel];
+      if (!d) return;
+      const competitor = d.competitors[selectedCompany] || ["", ""];
+      setText("detailTitle", d.title);
+      setHTML("detailIcon", `<svg class="icon icon-lg"><use href="#${d.icon}"></use></svg>`);
+      setText("rapidChannelTitle", d.rapidTitle);
+      setHTML("rapidChannelText", d.rapidText);
+      setText("competitorLabel", (companies[selectedCompany] || {}).name || "");
+      setText("competitorChannelTitle", competitor[0]);
+      setHTML("competitorChannelText", competitor[1]);
+      setText("aiChannelTitle", d.aiTitle);
+      setHTML("aiChannelText", d.aiText);
+      setText("detailKpi", d.kpi);
+    }
+
+    /* Grupos de botones: estado visual + estado ARIA + navegación con flechas */
+    function wireGroup(selector, ariaAttr, onSelect) {
+      const items = [...document.querySelectorAll(selector)];
+      items.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          items.forEach(b => {
+            const on = b === btn;
+            b.classList.toggle("active", on);
+            b.setAttribute(ariaAttr, String(on));
+          });
+          onSelect(btn);
+        });
+        btn.addEventListener("keydown", e => {
+          const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+          if (!step) return;
+          e.preventDefault();
+          const next = items[(index + step + items.length) % items.length];
+          next.focus();
+          next.click();
+        });
+      });
+    }
+
+    wireGroup(".selector-btn", "aria-pressed", btn => {
+      selectedCompany = btn.dataset.company;
+      updateCompany();
+    });
+
+    wireGroup(".channel-tab", "aria-selected", btn => {
+      selectedChannel = btn.dataset.channel;
+      updateChannelDetail();
+    });
+
+    wireGroup(".usecase-btn", "aria-pressed", btn => {
+      const u = usecases[btn.dataset.usecase];
+      if (!u) return;
+      setText("usecaseCurrentTitle", u.currentTitle);
+      setHTML("usecaseCurrentText", u.currentText);
+      setText("usecaseTargetTitle", u.targetTitle);
+      setHTML("usecaseTargetText", u.targetText);
+    });
+
+    /* Citas APA: al abrir una referencia se ofrece el regreso al punto de lectura */
+    document.querySelectorAll("a.apa-citation[href^='#ref-']").forEach((link, i) => {
+      if (!link.id) link.id = "cite-" + i;
+      link.addEventListener("click", () => {
+        const entry = document.querySelector(link.getAttribute("href"));
+        if (!entry) return;
+        entry.querySelectorAll(".backref-link").forEach(el => el.remove());
+        const back = document.createElement("a");
+        back.className = "backref-link";
+        back.href = "#" + link.id;
+        back.textContent = "\u21A9 Volver al texto";
+        entry.appendChild(back);
+      });
+    });
+
+    /* Copiar la lista de referencias en texto plano */
+    const copyRefsBtn = document.getElementById("copyRefsBtn");
+    if (copyRefsBtn) {
+      copyRefsBtn.addEventListener("click", async () => {
+        const status = document.getElementById("copyRefsStatus");
+        const text = [...document.querySelectorAll(".reference-entry")]
+          .map(el => el.textContent.replace(/\u21A9 Volver al texto/g, "").replace(/\s+/g, " ").trim())
+          .join("\n\n");
+        try {
+          await navigator.clipboard.writeText(text);
+          if (status) status.textContent = "Referencias copiadas al portapapeles.";
+        } catch (err) {
+          if (status) status.textContent = "No se pudo copiar: revisa los permisos del navegador.";
+        }
+        if (status) setTimeout(() => { status.textContent = ""; }, 4000);
+      });
+    }
+
+    const contactLift = document.getElementById("contactLift");
+    const automationRate = document.getElementById("automationRate");
+    function updateCalculator() {
+      if (!contactLift || !automationRate) return;
+      const lift = Number(contactLift.value);
+      const rate = Number(automationRate.value);
+      setText("contactLiftValue", `+${lift.toFixed(1)} pp`);
+      setText("automationRateValue", `${rate}%`);
+      setText("extraContacts", Math.round(64342 * lift / 100).toLocaleString("es-MX"));
+      setText("digitalResolved", Math.round(821 * rate / 100).toLocaleString("es-MX"));
+    }
+    if (contactLift) contactLift.addEventListener("input", updateCalculator);
+    if (automationRate) automationRate.addEventListener("input", updateCalculator);
+
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const navLinks = [...document.querySelectorAll(".nav-links a")];
+    const reveals = [...document.querySelectorAll(".reveal")];
+    const showAll = () => reveals.forEach(el => el.classList.add("visible"));
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (typeof IntersectionObserver === "undefined" || reduceMotion) {
+      /* Sin soporte de observador o con movimiento reducido: nada queda oculto */
+      showAll();
+    } else {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(el => revealObserver.observe(el));
+      /* Red de seguridad: si algo falla, el contenido aparece de todas formas */
+      setTimeout(() => {
+        if (!document.querySelector(".reveal.visible")) showAll();
+      }, 1800);
+    }
+    window.addEventListener("beforeprint", showAll);
+
+    if (typeof IntersectionObserver !== "undefined") {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => {
+            const on = a.getAttribute("href") === `#${entry.target.id}`;
+            a.classList.toggle("active", on);
+            if (on) { a.setAttribute("aria-current", "true"); } else { a.removeAttribute("aria-current"); }
+          });
+        }
+      });
+    }, { rootMargin: "-38% 0px -55% 0px" });
+    sections.forEach(s => sectionObserver.observe(s));
+    }
+
+    const progressBar = document.getElementById("scrollProgress");
+    let progressQueued = false;
+    function paintProgress() {
+      progressQueued = false;
+      if (!progressBar) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
+    }
+    window.addEventListener("scroll", () => {
+      if (progressQueued) return;
+      progressQueued = true;
+      requestAnimationFrame(paintProgress);
+    }, { passive: true });
+    paintProgress();
+
+    const presentationBtn = document.getElementById("presentationBtn");
+    function togglePresentation() {
+      const on = document.body.classList.toggle("presentation");
+      if (presentationBtn) presentationBtn.setAttribute("aria-pressed", String(on));
+    }
+    if (presentationBtn) presentationBtn.addEventListener("click", togglePresentation);
+    document.addEventListener("keydown", e => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      const tag = (document.activeElement && document.activeElement.tagName) || "";
+      if (/input|textarea|select/i.test(tag)) return;
+      if (e.key.toLowerCase() === "p") togglePresentation();
+    });
+
+    updateCompany();
+    updateCalculator();
+  </script>
+</body>
+</html>
